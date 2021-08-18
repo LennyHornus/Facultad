@@ -41,3 +41,18 @@ console.log(persona)
 
 let paises = [ 'Argentina', 'Chile', 'Uruguay'];
 console.log(paises)
+
+//Modulo, nos da el resto de una division
+console.log(11%2);
+
+//Incremento, se usa ++
+let numero = 6;
+console.log( ++numero);
+//Decremento
+let otroNumero = 10
+console.log( --otroNumero);
+//Comparacion simple, usamos ==, y nos permite ver si un valor es igual a otro, devuelve un dato booleano
+//Comparacion estricta, usamos ===, igual a la simple pero tambien pregunta si el tipo de dato es el mismo
+//Desigualdad simple y estricta son iguales a lo previo, usamos != para desigualdad simple, y !== para desigualdad estricta
+
+//Operadores
