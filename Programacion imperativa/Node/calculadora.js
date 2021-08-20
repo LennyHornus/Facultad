@@ -1,0 +1,62 @@
+//Suma
+const sumar = function (num1, num2) {
+    return num1 + num2;
+}
+
+let resultadoSuma = sumar(10,5)
+console.log(resultadoSuma);
+
+// Resta
+const restar = function(num1, num2) {
+    return num1 - num2;
+}
+
+let resultadoResta = restar(6,3)
+console.log(resultadoResta);
+
+//Multiplicacion
+const multiplicar = function(num1, num2) {
+    return num1 * num2;
+}
+
+let resultadoMultiplicacion = multiplicar(1,2)
+console.log('multiplicacion :' + resultadoMultiplicacion);
+
+// Division
+const division = function(num1, num2) {
+    return num1 / num2;
+}
+
+let resultadoDivision = division(100, 4)
+console.log('division:' + resultadoDivision);
+
+//Nivel 2
+console.log("---------------Testo de operaciones/Calculadora-----------")
+
+console.log(resultadoSuma, resultadoResta, resultadoMultiplicacion, resultadoDivision);
+console.log(division(10,0));
+
+//Nivel 3
+//1
+const elevar= function (num) {
+    return multiplicar(num, num)
+}
+console.log(elevar(9));
+
+//2
+const promedioDeTresNumeros = function (num1, num2, num3) {
+    return division((num1+num2+num3), 3)
+}
+console.log(promedioDeTresNumeros(10,20,30));
+
+//3
+const calcularPorcentaje = function (num1, num2) {
+    return division(multiplicar(num1,num2),100) + '%'
+}
+console.log(calcularPorcentaje(300,15));
+
+//4
+const generadorDePorcentaje = function (num1, num2) {
+    return division(multiplicar(num1,100),num2) + '%'
+}
+console.log(generadorDePorcentaje(2, 200));
