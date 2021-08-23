@@ -27,5 +27,6 @@ h2 {
 }
 ul {
     color:gold;
+    border:black solid 2px;
 }
 /* Footer */

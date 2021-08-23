@@ -1,0 +1,81 @@
+Introducción a CSS
+==================
+Tipos de vinculación: 	
+    Vinculación externa: 	<link>
+    Vinculación interna: 	<style></style>
+    Vinculación en línea: 	style=””
+
+Sintaxis de una regla de estilo:
+    Selector {				    -> a quien? .. vamos a modificar
+        Propiedad: valor;		-> que característica? … vamos a cambiar. |-> declaración
+    }					           cuanto?... va a valer esa propiedad    |
+
+Conceptos clave
+===============
+-- CASCADA: en las hojas de estilo significa que el orden de las reglas importa en CSS: cuando dos reglas tienen la misma especificidad, se aplica la que aparece en último lugar en el CSS.
+
+-- ESPECIFICIDAD: es el modo que tiene el navegador de decidir qué regla se aplica si diversas reglas tienen selectores diferentes pero podrían aplicarse a un mismo elemento.
+   ID | clases, pesudo  | etiquetas  -> 1
+   style=""                         -> 1000
+   !important                       -> 10000 
+
+https://css-tricks.com/specifics-on-css-specificity/
+
+-- HERENCIA: algunos valores de las propiedades CSS que se han establecido para los elementos padre los heredan los elementos hijo, pero otros no.
+    Control de la herencia
+    CSS proporciona cuatro valores de propiedad universales especiales para el control de la herencia. Todas las propiedades CSS aceptan estos valores.
+    -- inherit:
+    Establece que el valor de la propiedad que se aplica a un elemento determinado sea exactamente igual al del elemento padre. En la práctica, esto "activa la herencia".
+    -- initial:
+    Establece que el valor de la propiedad que se aplica a un elemento seleccionado tenga el mismo valor que esté establecido para esa propiedad en la hoja de estilo por defecto del navegador.
+    -- unset (en-US)
+    Restablece la propiedad a su valor natural, lo que significa que si la propiedad se hereda de forma natural, actúa como inherit, y en caso contrario como initial.
+
+
+Lista de seectores
+==================
+https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors
+https://www.w3schools.com/cssref/css_selectors.asp
+    Nombre	                     Símbolo    Ejemplo	            Significado
+    --------------------------------------------------------------------------------------------------------------
+    Agrupación de selectores	    ,	    p, a, div { }	    Se aplican estilos a varios elementos.
+    Selector descendiente		            #page div { }	    Se aplican estilos a elementos dentro de otros.
+    Selector hijo	                >	    #page > div { }	    Se aplican estilos a elementos hijos directos.
+    Selector hermano adyacente	    +	    div + div { }	    Se aplican estilos a elementos que siguen a otros.
+    Selector hermano general	    ~	    div ~ div { }	    Se aplican estilos a elementos al mismo nivel.
+    Selector universal	            *	    #page * { }	        Se aplican estilos a todos los elementos.
+
+Juego para practicar selectores!!
+    https://flukeout.github.io/
+
+Fuente
+======
+    font-family:  Calibri, Arial, Helvetica, sans-serif;
+
+    Lista de unidades
+    https://www.w3schools.com/cssref/css_units.asp
+        px
+        %   -> relativo al padre
+        em  -> el tamaño de la letra M, relativo al padre
+        rem -> Root Em
+
+Colores
+========
+    Ejemplo: color rojo
+        color: #FF0000;
+        color: rgb(255, 0, 0);
+        color: red;
+
+    Ejemplo: color rojo con transparenca al 50%
+        color: #FF000080;               -> uso 80 porque es la mitad en hexadecimal entre 00 y FF
+        color: rgba(255, 0, 0, 0.5);
+        color: red; 
+        opacity: 0.5;
+
+    Tipos de colores admitidos: https://www.w3schools.com/cssref/css_colors_legal.asp
+    Lista de Colores por nombre
+        https://www.w3schools.com/cssref/css_colors.asp
+        https://htmlcolorcodes.com/color-names/
+
+
+

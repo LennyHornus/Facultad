@@ -1,0 +1,38 @@
+/* Header */
+.div{
+    display:flex;
+    justify-content: center;
+    }
+
+/* Main */
+
+h1{
+    text-align: center;
+    color:#005677;
+    background-color: #C4C4C4;
+    font-style: italic;
+    line-height: 40px;
+}
+
+.blanco{
+    margin-bottom: 90px;
+}
+
+h3{
+    color:#005677;
+    background-color: #C4C4C4;
+    line-height: 40px;
+}
+
+.dp{
+    font-weight: bold;
+}
+/* Footer */
+footer{
+    line-height: 35px;
+    background-color:#005677 ;
+}
+.centrate{
+    display: flex;
+    justify-content: center ;
+}
