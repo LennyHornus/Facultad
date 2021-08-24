@@ -91,3 +91,14 @@ function anteriorDelTriple(a) {
   return triple(a) - 1;
 }
 console.log(anteriorDelTriple(3));
+
+// Comparacion //
+// Son el + - * /, tambien el % que nos muestra el resto de una division, ++ que incrementa en 1 el numero, y -- que resta 1 al numero//
+// Igualdad simple ==, desigualdad simple !=
+// Igualdad estricta ===, desigualdad estricta !==
+// <, >, =<, >=
+
+// OPERADORES LOGICOS
+// && (and), todos los valores deben ser verdaderos para que el resultado sea true
+// || (or), con que un valor sea verdadero ya retorna true
+// ! (not), niega la condicion, si era verdadero sera falso y viceversa
