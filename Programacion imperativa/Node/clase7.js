@@ -43,7 +43,7 @@ console.log( suficienteLuz === false || movimientoRapido === true);
 //parciales, o si obtiene un 4 en el examen final.
 
 const aprueba = function (eval1, eval2, final) {
-    if ((eval1+eval2)/2 >= 7 || final >= 4){
+    if ((eval1 >7 && eval2 >= 7) || final >= 4){
         return 'Aprobaste pa'
     }else {
         return 'Ni redondeando para arriba pasas'
