@@ -1,7 +1,7 @@
 /* Header */
 body{
-    background-color: #000000;
-    background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+    background-color: #29539b;
+    background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
     background-position: center;
 }
 
@@ -19,6 +19,7 @@ h1{
     background-color: #C4C4C4;
     font-style: italic;
     line-height: 40px;
+    opacity: 0.5;
 }
 
 .blanco{
@@ -29,6 +30,7 @@ h3{
     color:#005677;
     background-color: #C4C4C4;
     line-height: 40px;
+    opacity: 0.5;
 }
 
 .dp{
@@ -37,9 +39,15 @@ h3{
 /* Footer */
 footer{
     line-height: 35px;
-    background-color:#005677 ;
+    background-color:#160077 ;
 }
 .centrate{
     display: flex;
     justify-content: center ;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.acerca{
+    font-size: 28px;
 }

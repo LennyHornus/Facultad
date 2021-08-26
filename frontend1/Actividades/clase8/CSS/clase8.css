@@ -1,0 +1,31 @@
+*{
+    margin: 0%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    background-image: url(../img/logo.png);
+}
+
+.banner{
+    background-image: url(../img/lemon-pie_1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 343px;
+    background-position-x: left;
+    background-position-y: bottom;
+    background-attachment: fixed;
+}
+
+.fa-shopping-basket {
+    color: orangered;
+}
+
+footer{
+    text-align: center;
+    background-color: black;
+    color: white;
+}

@@ -102,3 +102,29 @@ console.log(anteriorDelTriple(3));
 // && (and), todos los valores deben ser verdaderos para que el resultado sea true
 // || (or), con que un valor sea verdadero ya retorna true
 // ! (not), niega la condicion, si era verdadero sera falso y viceversa
+
+let dia = 'jueves'
+function finDeSemana (dia) {
+	switch (dia) {
+	case 'viernes':
+    	console.log('buen finde')
+		break;
+	case 'lunes':
+    	console.log('buena semana')
+		break;
+	default:
+    	console.log('buen dia')
+		}
+}
+
+
+function tengoClases(dia) {
+	switch (dia) {
+    	case 'lunes' || 'miercoles' || 'viernes':
+			console.log("tenés clases")
+		break;
+		default:
+			console.log("no tenés clases")
+	}
+}
+tengoClases('sabado')

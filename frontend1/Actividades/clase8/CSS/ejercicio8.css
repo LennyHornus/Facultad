@@ -1,0 +1,77 @@
+*{
+    margin: 0%;
+}
+
+body {
+    font-family: 'Grenze Gotisch', cursive;
+    background-color: #130f40;
+    background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
+}
+
+.banner{
+    background-image: url(../img/mansion3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+h1 {
+    color: yellow;
+    background-color: rgb(0, 0, 0, 0.4);
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    font-size: 200px;
+    font-weight: 400;
+}
+
+h2{
+    color: rgb(0, 81, 255);
+    font-size: 80px;
+    font-weight: 300;
+}
+
+.principal{
+    color: white;
+    text-align: left;
+}
+
+.ages{
+    font-family: cursive, sans-serif;
+    color: yellow;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.texto{
+    font-size: 20px;
+    font-family: serif;
+    width: 1800px;
+}
+
+.spc{
+    margin-bottom: 90px;
+}
+
+footer{
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(255, 251, 0);
+    line-height: 30px;
+}
+
+.fa-university{
+    color: gray;
+}
+
+.fa-book{
+    color:burlywood
+}
