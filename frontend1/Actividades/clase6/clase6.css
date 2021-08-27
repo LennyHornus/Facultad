@@ -1,0 +1,23 @@
+*{
+    margin: 0%;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.top{
+    color: white;
+    height: 70px;
+    background-color: black;
+    text-align: center;
+    line-height: 10px;
+}
+
+.banner{
+    background-image: url(./img/bowl.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+

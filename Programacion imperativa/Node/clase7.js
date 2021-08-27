@@ -57,3 +57,21 @@ console.log(aprueba(10,6,3));
 let estadoTarea = true;
 let practicaPiano = false;
 console.log( estadoTarea === true && practicaPiano === true);
+
+function totalAPagar(var1, num2) {
+        if (var1 ==='coche'){
+            return(86);
+        }else if(var1 === 'moto'){
+            return(70);
+        }else if(var1 === 'autobús'){
+            return(55);
+        }else{
+            console.log('En que viniste?');
+        }
+        if (num2>0 && num2<25){
+            return(50);
+        }else if (num2>25) {
+            return(25);
+        }
+    }
+totalAPagar('coche', 12)

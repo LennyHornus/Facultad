@@ -51,3 +51,11 @@ footer{
 .acerca{
     font-size: 28px;
 }
+
+a:hover {
+    color: red;
+}
+
+a:visited{
+    color: whitesmoke;
+}
