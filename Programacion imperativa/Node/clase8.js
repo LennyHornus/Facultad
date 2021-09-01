@@ -164,7 +164,7 @@ function traductor(objeto) {
       return 'Aca solo spanglish perdona'
   }
 }
-console.log(traductor('geno'));
+console.log(traductor('genio'));
 
 function valoracion(rating) {
   let estrella = ''
@@ -191,3 +191,32 @@ function valoracion(rating) {
   return estrella
 }
 console.log(valoracion('Muyna'));
+
+
+
+function valo2(rating) {
+  let estrella = ''
+  if (rating === 'Muy mala') {
+    estrella = 'Una lastima, espero la proxima sea mejor'
+  }else if (rating === 'Mala') {
+    estrella = 'Puede ser peor'
+  }else if (rating === 'Mediocre') {
+    estrella = 'mEdIoCre'
+  }else if (rating === 'Buena') {
+    estrella === 'hasta que te conformaste'
+  }else if (rating === 'Muy buena') {
+    estrella === 'Buena esta tu vieja wachin'
+  }else estrella = 'De que me estas hablando'
+  return estrella
+}
+
+console.log(valo2('wadasd'));
+
+function sumatoria(num1, num2) {
+  if (num1>=10 && num2>=10) {
+    return num1+num2
+  }else{
+    return 'Por favor ingrese números de 2 dígitos'
+  }
+}
+console.log(sumatoria(10, 10));

@@ -1,0 +1,93 @@
+/* General -------------------------------------------------------------------------*/
+*{
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Roboto', sans-serif;;
+}
+
+
+/* Header --------------------------------------------------------------------------*/
+.banner p{
+    background-color: #1CD1B0;
+    height: 40px;
+    padding-top: 12px;
+    font-size: 20px;
+}
+
+.banner h1{
+    background-color: #00669F;
+    height: 91px;
+    padding-top: 38px;
+    font-size: 40px;
+    line-height: 47px; 
+}
+
+.pegagoso{
+    position: sticky;
+    top: 20px;
+}
+
+.baticueva{
+    position: absolute;
+    width: 300px;
+    height: 193px;
+    left: 32px;
+    top: 293px;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.selfiebat{
+    position: absolute;
+    width: 120px;
+    height: 118px;
+    left: 122px;
+    top: 421px;
+    border-radius: 50%;
+}
+
+.heart{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 32%;
+    bottom: 6.25%;
+}
+
+.vermas{
+    position: absolute;
+    width: 128.78px;
+    height: 48.52px;
+    left: 117px;
+    top: 754px;
+    background: #00669F;
+    position: absolute;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #F3F3F3;
+}
+
+.descripcion{
+    position: absolute;
+    width: 267px;
+    height: 113px;
+    left: 48px;
+    top: 604px;
+    font-size: 16px;
+}
+
+
+/* Footer --------------------------------------------------------------------------*/
+
+footer,button{
+    background: #00669F;
+    color: #F3F3F3;
+    height: 40px;
+}
+
+footer p{
+    position: relative;
+    top: 25%;
+    left: 1%;
+}
