@@ -8,18 +8,17 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    height: 1024px;
     position: relative;
 }
 
-.descuentos {
+.descuento {
     background-color: #1CD1B0;
     height: 38px;
     position: absolute;
     width: 100%;
 }
 
-h2.descuentos {
+h2.descuento {
     display: block;
     font-size: 15px;
     font-weight: 400;
@@ -45,16 +44,16 @@ header h1{
 }
 
 main {
-    position: relative;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 main section.perfil {
     border: 1px;
-    display: inline-block;
-    height: 193px;
     margin: 32px;
-    margin-top: 154px;
     width: 300px;
 }
 
@@ -111,16 +110,16 @@ section.perfil div.descripcion button {
     width: 130px;
 }
 
-/*---------------------------- footer ---------------------------------*/
+/* ---------------------------------footer------------------------------ */
 
 footer {
-    background-color: #00669F;
     bottom: 0;
-    color: rgb(255, 255, 255);
+    background-color: #00669F;
+    color: white;
     font-size: 16px;
     height: 51px;
-    margin-top: 70px;
-    position: absolute;
+    margin-top: 300px;
+    position: relative;
     width: 100%;
     text-align: center;
 }

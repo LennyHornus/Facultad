@@ -42,3 +42,47 @@ function sumar(num1,num2) {
 
 console.log(sumar(10,19));
 console.log(sumar(9,10));
+
+
+// Contador de impares
+
+function noParesDeContarImparesHasta(numero){
+  let resultado = 0
+  for (let i=0; i<= numero; i++){
+      if (i%2!=0) {
+        resultado += 1
+      }else{
+        resultado += 0
+      }
+  }
+  return resultado
+}
+console.log(noParesDeContarImparesHasta(5));
+
+
+// Se encontro un 5
+
+const jaja = [1, 2, 3, 4 ,6 ,5]
+
+function encontreUn5(numeros) {
+  let i = 0
+  let respuesta;
+  do{
+      numeros[i]
+      i++
+      }while (i<= 5)
+          respuesta = "Se encontró un 5!"
+  return respuesta
+}
+console.log(encontreUn5(jaja));
+
+
+ // Tablas de multiplicar
+function tablaDeMultiplicar(numero) {
+	let i = 0;
+	while (i < 10) {
+		console.log(numero + " * " + (i + 1) + " " + "= " + numero * (i + 1));
+		i++
+	}
+}
+console.log(tablaDeMultiplicar(10));
