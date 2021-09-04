@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital@0;1&family=Newsreader:ital@0;1&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+header{
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+}
+  
+body {
+  font-family: 'Brygada 1918', cursive;
+  font-style: italic;
+  color: #c5c5c5;
+  height: 100%;
+  background-image: url(./bgRepo.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+  text-align: center;
+}
+
+h1{
+  display: block;
+  width: 100%;
+  height: 60px;
+  padding: 14px;
+  background-color: rgb(0, 0, 0);
+  color: #c5c5c5;
+  text-align: center;
+  border-style: none;
+  box-shadow: 1px 3px 15px white;
+}
+  
+.front {
+  display: inline-block;
+  margin: 50px;
+  color: #c5c5c5;
+  font-size: 40px;
+  background-color: black;
+  border-style: ridge;
+  width: 600px;
+  height: 100px;
+  padding: 25px;
+  position: relative;
+  top: 90px;
+  box-shadow: 1px 1px 15px white;
+}
+
+.list {
+  list-style: none;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 50px;
+  background-color: black;
+  width: 600px;
+  border-style: ridge;
+  position: relative;
+  top: 55px;
+  box-shadow: 1px 3px 15px white;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+footer{
+  display: block;
+  width: 100%;
+  height: 60px;
+  padding: 14px;
+  background-color: rgb(0, 0, 0);
+  color: #c5c5c5;
+  text-align: center;
+  border-style: none;
+  box-shadow: 1px 3px 15px white;
+  position: relative;
+  top: 343px;
+}
+
+.piePagina {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
