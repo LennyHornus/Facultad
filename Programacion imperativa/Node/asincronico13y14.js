@@ -45,3 +45,33 @@ console.log(cursoOriginal);
 
 // 14--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Estan los ejercicios en playground
+
+const remera = {
+    marca : 'Aires modernos',
+    color : 'rojo',
+    size: 'XXL',
+    estado: 'para tirar',
+    porcentajeAlgodon: 30,
+    porcentajePoliester: 65,
+    traerMateriales: function () {
+        return `algodón ${this.porcentajeAlgodon}, poliester ${this.porcentajePoliester}`
+        // return 'algodon ' + this.porcentajeAlgodon + ',poliester ' + this.porcentajePoliester
+    }
+}
+const materiales = remera.traerMateriales();
+console.log(materiales);
+
+const teclado = {
+    marca : '',
+    cantidadDeTeclas : 1231,
+    disposicion : 'qwerty',
+    tipoSwitch : 'mecanico',
+    teclasEspeciales : ['ñ', 'ç'],
+    luces : false,
+    toggleLuces : function () {
+        this.luces = !this.luces
+        return this.luces? 'Estan prendidas': 'Estan apagadas'
+    }
+}
+console.log(teclado.toggleLuces());
+console.log(teclado.toggleLuces());
