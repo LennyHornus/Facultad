@@ -230,6 +230,17 @@ const inmobiliaria = {
     }
     return actualizados;
   },
+
+  // OPCION ALTERNATIVA PARA IMPUESTO
+  precioConImpostor : function (porcentaje) {
+    const actualizados = [];
+    for (let i = 0; i < this.departamentos.length; i++) {
+      const dpto = departamentos[i];
+      dpto.precioAlquiler = (dpto.precioAlquiler * porcentaje).toFixed(2);
+      actualizados.push(dpto); 
+    }
+    return actualizados;
+  },
   // G
   simplificarPropietarios: function () {
     for (let i = 0; i < this.departamentos.length; i++) {
@@ -332,7 +343,12 @@ const Ofertas = inmobiliaria.rebajasPorNoAlquiler();
 inmobiliaria.listarDepartamentos(Ofertas);
 console.log(o);
 
-console.log(v, oo + " K. ");
+console.log(v, oo + " K. Buscar por propietarios");
 const prop = inmobiliaria.buscarPorPropietarios('Juan');
 inmobiliaria.listarDepartamentos(prop);
+console.log(o);
+
+console.log(v, oo + " INTENTO 2 PRECIO IMPUESTO ");
+const impuesto = inmobiliaria.precioConImpostor(10);
+inmobiliaria.listarDepartamentos(impuesto);
 console.log(o);

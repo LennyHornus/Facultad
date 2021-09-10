@@ -1,0 +1,7 @@
+SELECT canciones.id, canciones.nombre, id_genero, generos.id, generos.nombre
+from canciones, generos
+where id_genero = generos.id and generos.nombre like 'blues' and compositor like '%willie dixon%'
+
+
+
+
