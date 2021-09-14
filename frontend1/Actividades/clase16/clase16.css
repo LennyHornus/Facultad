@@ -44,11 +44,6 @@ h2.descuento {
     background-color: rgb(189, 189, 189);
 }
 
-.add:visited{
-    color: whitesmoke;
-    background-color: #00669F;
-}
-
 header{
     position: sticky;
     top: 0px;

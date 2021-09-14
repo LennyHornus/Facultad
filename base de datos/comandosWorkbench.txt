@@ -2,6 +2,32 @@ SELECT canciones.id, canciones.nombre, id_genero, generos.id, generos.nombre
 from canciones, generos
 where id_genero = generos.id and generos.nombre like 'blues' and compositor like '%willie dixon%'
 
+// Clase 16 actividad -------------------------------------------------------------------
 
+1
 
+select f.facturaid as 'id de la factura' , f.FechaFactura as 'fecha de la factura', c.Compania as 'nombre de la empresa de correo', c1.Contacto as 'nombre del cliente', p.CategoriaID as 'categoria del producto vendido', p.ProductoNombre as 'nombre del producto', p.PrecioUnitario as 'precio unitario', fd.Cantidad as 'cantidad'
+from facturas f
+inner join correos c on f.EnvioVia = c.CorreoID
+inner join clientes c1 on f.ClienteID = c1.ClienteID
+inner join facturadetalle fd on fd.FacturaID = f.FacturaID
+inner join productos p on p.ProductoID = fd.ProductoID
+inner join categorias ca on p.CategoriaID = ca.CategoriaID;
 
+2
+
+select *
+from categorias c
+left join productos p on c.CategoriaID = p.CategoriaID;
+
+3
+
+select *
+from clientes c
+left join facturas f on c.ClienteID = f.ClienteID
+where FacturaID is null;
+
+4
+
+ACTIVIDAD:
+https://drive.google.com/file/d/13xkzBEpLO5YUNnJv8W5Tqahgg31d2fbT/view

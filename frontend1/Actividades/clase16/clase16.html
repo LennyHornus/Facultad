@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./clase16.css">
+    <title>Heroes responsive</title>
+
+<body>
+    <h2 class="descuento">Descuentos 20%</h2>
+    <header>
+        <h1>Card Super Heroes</h1>
+        <nav>
+            <p>Contacto</p>
+            <p>Registrarme</p>
+            <p>Ingresar</p>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div>
+                <h2>Añadi tu Super!</h2>
+                <p>Agregá tu personaje favorito completando las opciones</p>
+            </div>
+
+            <div>
+                <form action="" enctype="multipart/form-data">
+                    <fieldset>
+                        <!-- Nombre -->
+                        <label for="nom">Nombre *</label>
+                        <input type="text" id="nom" name="nombre" placeholder="Bruce Wayne" required>
+                        <!-- Especie -->
+                        <label for="especie">Especie *</label>
+                        <input type="text" id="especie" name="especie" value="" list="especies" required>
+                        <datalist id="especies">
+                                <option value="Humano">
+                                <option value="Kryptoniano">
+                                <option value="Amazona">
+                        </datalist>
+                        <br>
+                        <!-- Fecha -->
+                        <label for="f_nac">Fecha de nacimiento</label>
+                        <input type="date" id="f_nac" name="f_nac">
+                        <!-- Foto Perfil -->
+                        <label for="foto">Agregar foto</label>
+                        <input type="file" id="foto" name="foto" accept="image/jpg, image/jpeg">
+                        <!-- Descipcion -->
+                        <input type="text" id="descripcion" name="descripcion" placeholder="Descripción">
+                        <!-- Poderes -->
+                        <p>Poderes
+                            <input type="checkbox" id="poder1" name="poder">
+                            <label for="poder1">Super Fuerza</label>
+                            <input type="checkbox" id="poder2" name="poder">
+                            <label for="poder2">Volar</label>
+                            <input type="checkbox" id="poder3" name="poder">
+                            <label for="poder3">Vision Laser</label>
+                            <input type="checkbox" id="poder4" name="poder">
+                            <label for="poder4">Ser Batman</label>
+                        </p>
+                        <!-- Tipo de Personaje -->
+                        <p>Tipo de Personaje
+                            <input type="radio" id="personaje1" name="personaje" value="1">
+                            <label for="personaje1">Héroe / Heroina</label>
+                            <input type="radio" id="personaje2" name="personaje" value="2">
+                            <label for="personaje2">Villano / Villana</label>
+                        </p>
+                        <!-- Añadir -->
+                        <button>Añadir</button>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Todos los derechos reservados a FRONT END 1</p>
+    </footer>
+</body>
+</html>

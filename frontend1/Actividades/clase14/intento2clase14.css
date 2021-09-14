@@ -27,28 +27,6 @@ h2.descuento {
     position: relative;
 }
 
-.add {
-    position: fixed;
-    top: 50vh;
-    right: 5px;
-    background-color: #00669F;
-    color: whitesmoke;
-    font-size: 50px;
-    padding: 10px 20px 10px;
-    border-radius: 50%;
-    text-align: center;
-}
-
-.add:hover{
-    color: black;
-    background-color: rgb(189, 189, 189);
-}
-
-.add:visited{
-    color: whitesmoke;
-    background-color: #00669F;
-}
-
 header{
     position: sticky;
     top: 0px;
@@ -58,28 +36,13 @@ header{
 header h1{
     background-color: #00669F;
     box-shadow: 0px 10px 7px rgba(0, 0, 0, 0.25);
+    font-size: 40px;
     font-weight: 400;
-    height: 80px;
+    height: 101px;
     padding: 28px;
     width: 100%;
 }
 
-header nav{
-    background-color: #001D2D;
-    color: whitesmoke;
-    width: 100%;
-    height: 40px;
-    left: -1px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    text-align: right;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-header  p{
-    padding: 20px;
-}
 
 main {
     display: flex;
@@ -90,13 +53,13 @@ main {
     align-content: center;
 }
 
-main section.perfil {
+main article.perfil {
     border: 1px;
     margin: 32px;
     width: 300px;
 }
 
-section.perfil div.fondo {
+article.perfil div.fondo {
     position: relative;
     height: 193px;
 }
@@ -106,13 +69,13 @@ section.perfil div.fondo {
     overflow: hidden;
  }
 
-section.perfil div.fondo div.reaccion img {
+article.perfil div.fondo div.reaccion img {
     left: 15px;
     position: absolute;
     top: 20px;
 }
 
-section.perfil div.descripcion {
+article.perfil div.descripcion {
     background-color: #F3F3F3;
     box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.25);
     height: 400px;
@@ -121,7 +84,7 @@ section.perfil div.descripcion {
     width: inherit;
 }
 
-section.perfil div.descripcion img {
+article.perfil div.descripcion img {
     border-radius: 50%;
     left: 90px;
     position: absolute;
@@ -129,14 +92,14 @@ section.perfil div.descripcion img {
     width: 120px;
 }
 
-section.perfil div.descripcion h3 {
+article.perfil div.descripcion h3 {
     font-size: 30px;
     font-weight: 400;
     margin-top: 60px;
     text-align: center;
 }
 
-section.perfil div.descripcion p {
+article.perfil div.descripcion p {
     color: #333333;
     font-size: 15px;
     line-height: 16px;
@@ -145,7 +108,7 @@ section.perfil div.descripcion p {
     height: 174px;
 }
 
-section.perfil div.descripcion button {
+article.perfil div.descripcion button {
     background-color: #00669F;
     border: 1px solid transparent;
     color: white;
