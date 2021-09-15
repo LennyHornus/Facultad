@@ -27,22 +27,6 @@ h2.descuento {
     position: relative;
 }
 
-.add {
-    position: fixed;
-    top: 50vh;
-    right: 5px;
-    background-color: #00669F;
-    color: whitesmoke;
-    font-size: 50px;
-    padding: 10px 20px 10px;
-    border-radius: 50%;
-    text-align: center;
-}
-
-.add:hover{
-    color: black;
-    background-color: rgb(189, 189, 189);
-}
 
 header{
     position: sticky;
@@ -84,69 +68,83 @@ main {
     align-items: center;
     align-content: center;
 }
-
-main section.perfil {
-    border: 1px;
-    margin: 32px;
-    width: 300px;
-}
-
-section.perfil div.fondo {
+fieldset {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #00669F;
+    color: white;
+    box-shadow: 30%;
+    border-radius: 10%;
+    height: 80vh;
+    width: 50vw;
+    top: 50px;
     position: relative;
-    height: 193px;
+    margin: 20px;
+    padding: 20px 100px;
 }
 
-.radiusContenedorImg{
-    border-radius: 16px 16px 0px 0px;
-    overflow: hidden;
- }
-
-section.perfil div.fondo div.reaccion img {
-    left: 15px;
-    position: absolute;
-    top: 20px;
-}
-
-section.perfil div.descripcion {
-    background-color: #F3F3F3;
-    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.25);
-    height: 400px;
-    padding: 15px;
-    position: relative;
-    width: inherit;
-}
-
-section.perfil div.descripcion img {
-    border-radius: 50%;
-    left: 90px;
-    position: absolute;
-    top: -65px;
-    width: 120px;
-}
-
-section.perfil div.descripcion h3 {
-    font-size: 30px;
-    font-weight: 400;
-    margin-top: 60px;
+fieldset h2{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 72px;
     text-align: center;
 }
 
-section.perfil div.descripcion p {
-    color: #333333;
-    font-size: 15px;
-    line-height: 16px;
+fieldset p{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 14px;
     padding: 10px;
-    width: 267px;
-    height: 174px;
 }
 
-section.perfil div.descripcion button {
-    background-color: #00669F;
-    border: 1px solid transparent;
-    color: white;
-    margin: 25px 70px 10px 70px;
-    padding: 15px 35px;
-    width: 130px;
+fieldset button{
+    padding: 22px 167px 21px 168px;
+    border-radius: 23px;
+    background-color: #1CD1B0;
+    color: black;
+    font-family: Inter;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 44px;
+    height: 10%;
+    width: 50%;
+    padding: 15px 0px 15px 0px;
+}
+
+.label1{
+    text-align: left;
+    padding: 0px 240px 0px 0px;
+}
+
+.label2{
+    padding: 0px 160px 0px 0px;
+}
+
+.input1{
+    border-radius: 15px;
+    width: 33%;
+    height: 7%;
+    padding: 10px;
+}
+
+.descripcion{
+    height: 35%;
+    width: 33%;
+    border-radius: 10%;
+    text-align: left;
+    padding: 0px 0px 210px 10px;
+}
+
+ul{
+    list-style: none;
 }
 
 /* ---------------------------------footer------------------------------ */
