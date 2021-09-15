@@ -176,9 +176,7 @@ const appProfesionales = {
     for (let i = 0; i < profesionales.length; i++) {
       const doc = profesionales[i];
       console.log(
-        `id: ${doc.id} ${doc.estaHabilitado ? "ok" : "inactivo"}, ${
-          doc.especialidad
-        }, ${doc.nombre}, valor consulta ${doc.honorarioConsulta}.`
+        `id: ${doc.id} ${doc.estaHabilitado ? "ok" : "inactivo"}, ${doc.especialidad}, ${doc.nombre}, valor consulta ${doc.honorarioConsulta}.`
       );
     }
   },
