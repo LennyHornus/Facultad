@@ -47,6 +47,18 @@ h2.descuento {
 .add:visited{
     color: whitesmoke;
     background-color: #00669F;
+    text-decoration: none;
+}
+
+.adda:visited{
+    color: whitesmoke;
+    background-color: #00669F;
+    text-decoration: none;
+}
+
+.adda:hover {
+    color: black;
+    background-color: rgb(189, 189, 189);
 }
 
 header{

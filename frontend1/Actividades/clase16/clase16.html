@@ -19,72 +19,76 @@
         </nav>
     </header>
     <main>
-        <section>
-            <div>
                 <form action="" enctype="multipart/form-data">
-                    <fieldset>
                         <div>
                             <h2>Añadi tu Super!</h2>
-                            <br>
                             <p>Agregá tu personaje favorito completando las opciones</p>
                         </div>
-                        <!-- Nombre -->
-                        <label for="nom" class="label1">Nombre *</label>
-                        <input type="text" id="nom" name="nombre" placeholder="Bruce Wayne" required class="input1">
-                        <!-- Especie -->
-                        <label for="especie" class="label1">Especie *</label>
-                        <input type="text" id="especie" name="especie" value="" list="especies" required class="input1">
-                        <datalist id="especies">
-                                <option value="Humano">
-                                <option value="Kryptoniano">
-                                <option value="Amazona">
-                        </datalist>
-                        <br>
-                        <!-- Fecha -->
-                        <label for="f_nac" class="label2">Fecha de nacimiento</label>
-                        <input type="date" id="f_nac" name="f_nac" class="input1">
-                        <!-- Foto Perfil -->
-                        <label for="foto" class="label1">Agregar foto</label>
-                        <input type="file" id="foto" name="foto" accept="image/jpg, image/jpeg">
-                        <!-- Descipcion -->
-                        <input type="text" id="descripcion" name="descripcion" placeholder="Descripción" class="descripcion">
-                        <!-- Poderes -->
-                        <ul>Poderes:
-                            <li>
-                            <input type="checkbox" id="poder1" name="poder">
-                            <label for="poder1">Super Fuerza</label>
-                            </li>
-                            <li>
-                            <input type="checkbox" id="poder2" name="poder">
-                            <label for="poder2">Volar</label>
-                            </li>
-                            <li>
-                            <input type="checkbox" id="poder3" name="poder">
-                            <label for="poder3">Vision Laser</label>
-                            </li>
-                            <li>
-                            <input type="checkbox" id="poder4" name="poder">
-                            <label for="poder4">Ser Batman</label>
-                            </li>
-                        </ul>
-                        <br>
-                        <!-- Tipo de Personaje -->
-                        <ul>Tipo de Personaje:
-                            <li>
-                            <input type="radio" id="personaje1" name="personaje" value="1">
-                            <label for="personaje1">Héroe / Heroina</label>
-                            </li>
-                            <li>
-                            <input type="radio" id="personaje2" name="personaje" value="2">
-                            <label for="personaje2">Villano / Villana</label>
-                            </li>
-                        </ul>
+                        <div class="formulario">
+                            <div class="left">
+                                <!-- Nombre -->
+                                <label for="nom" class="label1">Nombre *</label>
+                                <br>
+                                <input type="text" id="nom" name="nombre" placeholder="Bruce Wayne" required class="input1">
+                                <br>
+                             <!-- Especie -->
+                                <label for="especie" class="label1">Especie *</label>
+                                <br>
+                                <input type="text" id="especie" name="especie" value="" list="especies" required class="input1">
+                                <datalist id="especies">
+                                    <option value="Humano">
+                                    <option value="Kryptoniano">
+                                    <option value="Amazona">
+                                </datalist>
+                                <br>
+                                <!-- Descipcion -->
+                                <input type="text" id="descripcion" name="descripcion" placeholder="Descripción" class="descripcion">
+                            </div>
+                            <div class="right">
+                                <!-- Fecha -->
+                                <label for="f_nac" class="label2">Fecha de nacimiento</label>
+                                <br>
+                                <input type="date" id="f_nac" name="f_nac" class="input1">
+                                <br>
+                                <!-- Foto Perfil -->
+                                <label for="foto" class="label1">Agregar foto</label>
+                                <input type="file" id="foto" name="foto" accept="image/jpg, image/jpeg">
+                                <!-- Poderes -->
+                                <ul>Poderes:
+                                    <li>
+                                        <input type="checkbox" id="poder1" name="poder">
+                                        <label for="poder1">Super Fuerza</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="poder2" name="poder">
+                                        <label for="poder2">Volar</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="poder3" name="poder">
+                                        <label for="poder3">Vision Laser</label>
+                                   </li>
+                                    <li>
+                                        <input type="checkbox" id="poder4" name="poder">
+                                        <label for="poder4">Ser Batman</label>
+                                    </li>
+                                </ul>
+                                <br>
+                                <!-- Tipo de Personaje -->
+                                <ul>Tipo de Personaje:
+                                    <li>
+                                        <input type="radio" id="personaje1" name="personaje" value="1">
+                                        <label for="personaje1">Héroe / Heroina</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="personaje2" name="personaje" value="2">
+                                        <label for="personaje2">Villano / Villana</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         <!-- Añadir -->
                         <button>Añadir</button>
-                    </fieldset>
                 </form>
-            </div>
-        </section>
     </main>
     <footer>
         <p>Todos los derechos reservados a FRONT END 1</p>

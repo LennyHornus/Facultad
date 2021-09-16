@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 * {
     box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     position: relative;
 }
 
@@ -26,7 +26,6 @@ h2.descuento {
     padding: 10px 10px;
     position: relative;
 }
-
 
 header{
     position: sticky;
@@ -61,6 +60,10 @@ header  p{
 }
 
 main {
+    padding: 50px 25% 100px
+}
+
+form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -68,27 +71,19 @@ main {
     align-items: center;
     align-content: center;
 }
-fieldset {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+form {
     background-color: #00669F;
     color: white;
     box-shadow: 30%;
     border-radius: 10%;
-    height: 80vh;
-    width: 50vw;
-    top: 50px;
     position: relative;
-    margin: 20px;
-    padding: 20px 100px;
+    padding: 3% 9%;
+    width: 100%;
+    text-align: left;
 }
 
-fieldset h2{
-    font-family: Inter;
+form h2{
+    font-family: 'Inter';
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
@@ -96,8 +91,8 @@ fieldset h2{
     text-align: center;
 }
 
-fieldset p{
-    font-family: Inter;
+form p{
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
@@ -105,12 +100,12 @@ fieldset p{
     padding: 10px;
 }
 
-fieldset button{
+form button{
     padding: 22px 167px 21px 168px;
     border-radius: 23px;
     background-color: #1CD1B0;
     color: black;
-    font-family: Inter;
+    font-family: 'Inter';
     font-weight: bold;
     font-size: 40px;
     line-height: 44px;
@@ -119,28 +114,39 @@ fieldset button{
     padding: 15px 0px 15px 0px;
 }
 
-.label1{
-    text-align: left;
-    padding: 0px 240px 0px 0px;
+form button:hover{
+    background-color: #001D2D;
+    color: white;
 }
 
-.label2{
-    padding: 0px 160px 0px 0px;
+.formulario{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.left, .right{
+    flex-grow: 1;
+    max-width: 800px;
+    padding: 15px;
 }
 
 .input1{
     border-radius: 15px;
-    width: 33%;
-    height: 7%;
+    width: 343px;
     padding: 10px;
+    height: 63px;
 }
 
 .descripcion{
-    height: 35%;
-    width: 33%;
+    height: 307px;
+    width: 343px;
     border-radius: 10%;
-    text-align: left;
-    padding: 0px 0px 210px 10px;
+    padding: 0px 0px 200px 10px;
+    font-size: 20px;
 }
 
 ul{
@@ -155,7 +161,6 @@ footer {
     color: white;
     font-size: 16px;
     height: 51px;
-    margin-top: 300px;
     position: relative;
     width: 100%;
     text-align: center;
