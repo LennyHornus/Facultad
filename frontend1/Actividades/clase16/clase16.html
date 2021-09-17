@@ -11,7 +11,7 @@
 <body>
     <h2 class="descuento">Descuentos 20%</h2>
     <header>
-        <h1>Card Super Heroes ESTA EN CONSTRUCCCION</h1>
+        <h1>Card Super Heroes</h1>
         <nav>
             <p>Contacto</p>
             <p>Registrarme</p>
@@ -28,12 +28,18 @@
                             <div class="left">
                                 <!-- Nombre -->
                                 <label for="nom" class="label1">Nombre *</label>
-                                <br>
                                 <input type="text" id="nom" name="nombre" placeholder="Bruce Wayne" required class="input1">
                                 <br>
-                             <!-- Especie -->
-                                <label for="especie" class="label1">Especie *</label>
+                                <!-- Fecha -->
+                                <label for="f_nac" class="label2">Fecha de nacimiento</label>
+                                <input type="date" id="f_nac" name="f_nac" class="input1">
                                 <br>
+                                <!-- Descipcion -->
+                                <input type="text" id="descripcion" name="descripcion" placeholder="Descripción" class="descripcion">
+                            </div>
+                            <div class="right">
+                                <!-- Especie -->
+                                <label for="especie" class="label1">Especie *</label>            
                                 <input type="text" id="especie" name="especie" value="" list="especies" required class="input1">
                                 <datalist id="especies">
                                     <option value="Humano">
@@ -41,18 +47,12 @@
                                     <option value="Amazona">
                                 </datalist>
                                 <br>
-                                <!-- Descipcion -->
-                                <input type="text" id="descripcion" name="descripcion" placeholder="Descripción" class="descripcion">
-                            </div>
-                            <div class="right">
-                                <!-- Fecha -->
-                                <label for="f_nac" class="label2">Fecha de nacimiento</label>
-                                <br>
-                                <input type="date" id="f_nac" name="f_nac" class="input1">
-                                <br>
                                 <!-- Foto Perfil -->
                                 <label for="foto" class="label1">Agregar foto</label>
+                                <br>
                                 <input type="file" id="foto" name="foto" accept="image/jpg, image/jpeg">
+                                <br>
+                                <br>
                                 <!-- Poderes -->
                                 <ul>Poderes:
                                     <li>
