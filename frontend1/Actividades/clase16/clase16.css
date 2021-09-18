@@ -154,6 +154,11 @@ form button:hover{
 
 ul{
     list-style: none;
+    padding-bottom: 10px;
+}
+
+#tipoPj{
+    padding-top: 20px;
 }
 
 /* ---------------------------------footer------------------------------ */
