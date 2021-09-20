@@ -4,7 +4,6 @@ const helperClean = {
     pasaAJSON : function (array, nombreArchivo) {
         const arrayJSON = JSON.stringify(array, null, 2);
         const resultado = this.fs.writeFileSync('./'+nombreArchivo+'.JSON', arrayJSON);
-        return 'salio bien'
     },
     pasaAArray : function (string) {
         const array = this.fs.readFileSync(string)
