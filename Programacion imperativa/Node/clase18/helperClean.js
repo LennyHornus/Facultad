@@ -3,10 +3,10 @@ const helperClean = {
     fs : fs,
     pasaAJSON : function (array, nombreArchivo) {
         const arrayJSON = JSON.stringify(array, null, 2);
-        const resultado = this.fs.writeFileSync('./'+nombreArchivo+'.JSON', arrayJSON);
+        this.fs.writeFileSync( __dirname + '/'+nombreArchivo+'.JSON', arrayJSON);
     },
-    pasaAArray : function (string) {
-        const array = this.fs.readFileSync(string)
+    pasaAArray : function (nombreArchivo) {
+        const array = this.fs.readFileSync(__dirname + '/' + nombreArchivo + '.json', 'utf-8')
         const arrayJSON = JSON.parse(array);
         return arrayJSON;
     }

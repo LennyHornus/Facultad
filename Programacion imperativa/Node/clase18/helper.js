@@ -7,7 +7,7 @@ const helper = {
         return 'salio bien'
     },
     pasaAArray : function (string) {
-        const array = this.fs.readFileSync(string)
+        const array = this.fs.readFileSync(string, 'utf-8')
         const arrayJSON = JSON.parse(array);
         return arrayJSON;
     }
