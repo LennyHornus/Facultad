@@ -9,6 +9,7 @@
 body {
     font-family: 'Inter', sans-serif;
     position: relative;
+    width: 100%;
 }
 
 .descuento {
@@ -49,15 +50,44 @@ header nav{
     height: 40px;
     left: -1px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    text-align: right;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
 }
 
-header  p{
-    padding: 20px;
+header nav ul{
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
 }
+
+header nav ul li{
+    border-top: 10px;
+    padding: 10px;
+}
+
+header nav ul li a{
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+
+header nav ul li a:before{
+    content:'';
+    background: #1CD1B0;
+    position:absolute;
+    bottom:-10px; 
+    height: 5px;
+    width: 0%;
+    /* alto y ancho=0 */
+    /* transition: ; */
+    transition: ease .8s;
+}
+header nav ul li a:hover::before{
+    /* ancho final */
+    width: 100%;
+}
+
+
+/* Main ---------------------------------------------------------------------------------------------------------*/
 
 main {
     padding: 50px 25% 100px
@@ -71,7 +101,8 @@ form {
     align-items: center;
     align-content: center;
 }
-form {
+
+form{
     background-color: #00669F;
     color: white;
     box-shadow: 30%;
@@ -152,7 +183,7 @@ form button:hover{
     font-size: 20px;
 }
 
-ul{
+form div ul{
     list-style: none;
     padding-bottom: 10px;
 }
@@ -161,6 +192,10 @@ ul{
     padding-top: 20px;
 }
 
+form button a{
+    text-decoration: none;
+    color: white;
+}
 /* ---------------------------------footer------------------------------ */
 
 footer {

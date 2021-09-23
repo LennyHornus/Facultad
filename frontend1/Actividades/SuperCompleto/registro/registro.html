@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="Es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./registro.css">
+    <title>Registro</title>
+</head>
+<body>
+    <h2 class="descuento">Descuentos 20%</h2>
+    <header>
+        <h1>Card Super Heroes</h1>
+        <nav>
+            <ul>
+                <li><a href="../contacto/contacto.html">Contacto</a></li>
+                <li><a href='../inicio/inicio.html'>Inicio</a></li>
+                <li><a href="../login/login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2> Registro </h2>
+            <form>
+                <input type="text" id="user" name="user" placeholder="Usuario" required>
+                <input type="email" id="mail" name="mail" placeholder="Corre Electronico" required>
+                <input type="password" id="pass" name="pass" placeholder="Contraseña" required>
+                <select name="pais" id="pais">
+                    <option value="" selected disabled >País</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Venezuela">Venezuela</option>
+                </select>
+                <div>
+                    <button type="reset" class="reset"> Resetear </button>
+                    <button type="submit"><a href="../inicio/inicio.html"> Registrar </a></button>
+                </div>
+            </form>
+            <p>¿Ya tenes una cuenta? <a href="../login/login.html">Ingresar </a></p>
+        </section>
+    </main>
+    <footer>
+        <p>Todos los derechos reservados a FRONT END 1</p>
+    </footer>
+</body>
+</html>
