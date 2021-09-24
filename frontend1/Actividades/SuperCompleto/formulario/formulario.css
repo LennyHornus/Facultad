@@ -199,12 +199,12 @@ form button a{
 /* ---------------------------------footer------------------------------ */
 
 footer {
+    position: absolute;
     bottom: 0;
     background-color: #00669F;
     color: white;
     font-size: 16px;
     height: 51px;
-    position: relative;
     width: 100%;
     text-align: center;
 }

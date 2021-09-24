@@ -1,0 +1,73 @@
+de mobile a desktop la media es con min-width
+de desktop a mobile es con max-width
+
+flex row 
+justify content es el eje x si es direction colunm cambia a ser el eje y
+align items es el eje y si es direction colunm cambia a ser el eje x
+
+:root{} dentro se declaran las variables, despues usamos la variable 
+siempre dentro de un var(nombre variable)
+
+para ser responsible necesitamos la etiqueta meta de viewport y usar @media y tamaños responsive
+
+TRANSITION SIEMPRE VA CON ALGUN EVENTO Y SIEMPRE LA TRANSITION VA A ESTAR
+EN EL ELEMENTO NO EN EL EVENTO.
+
+Para hacer una animacion hay que hacer un keyframe con los porcentajes de la animacion
+y como se vana  comportar en cada momento
+ @keyframes rotate-center{
+     0%{transform:rotate(0)
+        }
+ 
+    100%{transform:rotate(360deg)
+        }
+}
+
+Y despues se agrega la etiqueta animation en el elemento que recibe la misma
+con el nombre del keyframe, la velocidad, la forma en que va a hacer la animacion
+por defecto ease (empieza y frena al final) linear(es constante) etc , y si es infinita
+ animation: rotate-center 0.5s linear infinite 
+
+Medidas
+% siempre referencia al padre
+Rem tamaño de la letra del root osea de todo el documento 
+	(ojo si hay una regla de body o * hay que tomar esa)
+Em tamaño de la letra del contenedor padre
+vw ancho de navegador
+hv alto del navegador
+
+Formularios
+siempre tener action y method (por defecto tiene get asi que si no esta el atributo 
+method es porque toma como get).
+siempre los input tiene que tener name="" si no lo tiene no manda el dato.
+label dentro del for="" lleva el id del input, tambien se puede evitar el id metiendo el input
+dentro de label.
+los checkbox ademas del name llevan el value="" con el valor que envia si se chequea, es recomendable 
+que el label del checkbox vaya despues del input del checkbox.
+con el checkbox podemos marcar mas de uno en cambio con un radio siempre es uno.
+el radio llevan toos el mismo name para que solo deje seleccionar uno.
+
+Select no es un input, se declara con la etiqueta select y dentro lleva las opciones que llevar el value
+que va a enviar el name de select.
+<Select name="">
+	<option value="auto">auto</option>
+	<option value="moto">moto</option>
+
+	Agrupar se puede hacer con optgroup
+
+	<optgroup label="texto de muestra ej sin motor"> este lable no se puede seleccionar
+		<option value="bici">bici</option>
+	</optgroup>
+</select>
+
+diferencia entre input type submit y button submit es que el button permite agregarle cualquier 
+contenido dentro 
+
+
+- Ruta absoluta: Incluye el nombre del dominio.
+
+Ejemplo: ‘https://www.hostalia.com/contratacion/openxchange/’
+
+-Ruta relativa: Sólo indica el orden de directorios.
+
+Ejemplo: ‘/contratacion/openxchange/’

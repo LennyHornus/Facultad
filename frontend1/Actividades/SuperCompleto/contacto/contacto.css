@@ -186,13 +186,12 @@ section button a{
 /* Footer ------------------------------------------------------------------------------------------------------------------------*/
 
 footer {
+    position: absolute;
     bottom: 0;
     background-color: #00669F;
     color: white;
     font-size: 16px;
     height: 51px;
-    margin-top: 300px;
-    position: relative;
     width: 100%;
     text-align: center;
 }
