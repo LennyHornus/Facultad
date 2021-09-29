@@ -1,81 +1,131 @@
-const archivos = require("./lecturaEscritura");
-const arrayProfesionales = archivos.leerJson("profesionales");
+const jsonHelper = require("./lecturaEscritura.js");
 
-//A
-console.log('A ******************************************************************************');
-arrayProfesionales.forEach(profesional => {
-   console.log(`${profesional.nombre} - ${profesional.especialidad}`)}
-);
-console.log('B ******************************************************************************');
-//B
-console.log(arrayProfesionales);
-arrayProfesionales.forEach(prof =>{
-    prof.honorarioConsulta *= 1.05 
-});
-console.log(arrayProfesionales);
-console.log('C ******************************************************************************');
-//C
-let profesionalesDeshabilitados =  arrayProfesionales.filter(profesional => profesional.estaHabilitado === false)
-console.log(profesionalesDeshabilitados);
-console.log('D ******************************************************************************');
-//D
-let profesionalesHabilitados =  arrayProfesionales.filter(profesional => profesional.estaHabilitado === true)
-console.log(profesionalesHabilitados);
-console.log('E ******************************************************************************');
-//E
-let arquitectos =  arrayProfesionales.filter(profesional => profesional.especialidad === 'Arquitecto');
-console.table(arquitectos);
-console.log('F ******************************************************************************');
-//F
-profesionalesDeshabilitados.map(profesional => profesional.estaHabilitado = true)
-console.table(arrayProfesionales);
-console.log('G ******************************************************************************');
-//G 
-let cantidadTotalConsultas = arrayProfesionales.reduce((acum,profesional)=>{
-    return acum + profesional.cantidadConsultas;
-},0);
-console.log(cantidadTotalConsultas);
-console.log('H ******************************************************************************');
-//H
-let arrayRecaudacion = arrayProfesionales.map(profesional=>{
-    let objProf = {
-        nombre: profesional.nombre,
-        especialidad: profesional.especialidad,
-        recaudacion: profesional.cantidadConsultas * profesional.honorarioConsulta
-    };
-    return objProf;
-});
-console.log(arrayRecaudacion);
+const departamentos = jsonHelper.leerJson("departamentos");
 
-// Mesa 20 ----------------------------------------------------------------------------------
-// A
-let primeros5Profesionales = arrayProfesionales.slice(0,5);
-console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-console.log(primeros5Profesionales);
+const inmboliaria = {
+  departamentos : departamentos,
+  listarDepartamentos: function (array) {
+    array.forEach((element) => {
+      console.log(
+        `id: ${element.id}. precio $ ${element.precioAlquiler}. Esta ${
+          element.disponible ? "disponible" : "ocupado"
+        }. ${element.ambientes} ambientes \n`
+      );
+    });
+  },
+  buscarPorId: function (id) {
+    const encontrado = this.departamentos.filter((element) => {
+      return element.id === id;
+    });
 
-// B
-const nuevoProfesional = {
-    identificador: 250,
-    estaHabilitado: true,
-    honorarioConsulta: 8000,
-    edad: 52,
-    nombre: 'Linus Torvalds',
-    especialidad: 'Junior Developer',
-    cantidadConsultas: 48,
-    puntuacion: 50
-}
+    return encontrado;
+  },
+  departamentosNoDisponibles: function () {
+    const encontrado = this.departamentos.filter((element) => {
+      return element.disponible === false;
+    });
+    return encontrado;
+  },
 
-arrayProfesionales.splice(arrayProfesionales.findIndex(item => item.identificador === 14),1, nuevoProfesional);
-console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-console.log(arrayProfesionales);
+  departamentosDisponibles: function () {
+    const encontrados = this.departamentos.filter((element) => {
+      return element.disponible === true;
+    });
 
-// C
-arrayProfesionales.sort((a,b) => a.honorarioConsulta - b.honorarioConsulta);
-console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-console.log(arrayProfesionales);
+    return encontrados;
+  },
 
-// D
+  filtrarPorAmbientes: function (ambientes) {
+    const encontrados = this.departamentos.filter((element) => {
+      return element.ambientes >= ambientes;
+    });
+    return encontrados;
+  },
 
-let profesionalId15 = arrayProfesionales.find(item => item.identificador === 15);
-console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-console.log(profesionalId15);
+  filtrarPorPrecio: function (precio) {
+    const disponibles = this.departamentosDisponibles();
+    const filtradosPorPrecio = disponibles.filter((element) => {
+      return element.precioAlquiler <= precio;
+    });
+    return filtradosPorPrecio;
+  },
+
+  rebajarPrecioAlquiler: function (descuento) {
+    const disponibles = this.departamentosDisponibles();
+    this.departamentos.forEach((element) => {
+      disponibles.forEach((elemento) => {
+        if (element == elemento) {
+          element.precioAlquiler -= element.precioAlquiler * (descuento / 100);
+        }
+      });
+    });
+    jsonHelper.escribirJson("departamentos", this.departamentos);
+    return disponibles;
+  },
+
+  calcularRecaudación: function () {
+    const noDisponibles = this.departamentosNoDisponibles();
+    let recaudacion = 0;
+    noDisponibles.forEach((element) => {
+      recaudacion += element.precioAlquiler;
+    });
+    return recaudacion;
+  },
+
+  ordenarPorPrecio: function () {
+    return this.departamentos.sort((a, b) => {
+      if (a.precioAlquiler > b.precioAlquiler) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+  },
+};
+
+// const { listarDepartamentos } = inmboliaria;
+const listarDepartamentos = inmboliaria.listarDepartamentos;
+const ld = listarDepartamentos;
+
+console.log("Punto B");
+ld(inmboliaria.departamentos);
+
+console.log("Punto C");
+const depaPorId = inmboliaria.buscarPorId(4);
+ld(depaPorId);
+
+const enCasoDevolverVacio = (callback) => {
+  if (!callback[0]) {
+    console.log(callback);
+  } else {
+    listarDepartamentos(callback);
+  }
+};
+
+console.log("Punto D");
+const ocupados = inmboliaria.departamentosNoDisponibles();
+enCasoDevolverVacio(ocupados);
+
+console.log("Punto E");
+const disponibles = inmboliaria.departamentosDisponibles();
+enCasoDevolverVacio(disponibles);
+
+console.log("Punto F");
+const porAmbientes = inmboliaria.filtrarPorAmbientes(2);
+enCasoDevolverVacio(porAmbientes);
+
+console.log("Punto G");
+const porPrecio = inmboliaria.filtrarPorPrecio(30000);
+enCasoDevolverVacio(porPrecio);
+
+console.log("Punto H");
+const rebajados = inmboliaria.rebajarPrecioAlquiler(10);
+enCasoDevolverVacio(rebajados);
+
+console.log("Punto I");
+const recaudacion = inmboliaria.calcularRecaudación();
+console.log(recaudacion);
+
+console.log("Punto J");
+const ordenados = inmboliaria.ordenarPorPrecio();
+enCasoDevolverVacio(ordenados);

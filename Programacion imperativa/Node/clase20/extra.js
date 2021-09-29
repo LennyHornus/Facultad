@@ -32,40 +32,28 @@ const metodos = {
         let total = array.reduce((acum,profesional)=>{return acum + profesional.cantidadConsultas },0);
         return total
     },
-    FALTA TERMINAR c:
+    recaudacion : function (array) {
+        let arrayRecaudacion = array.map(profesional => {
+            let objProf = {
+                nombre: profesional.nombre,
+                especialidad: profesional.especialidad,
+                recaudacion: (profesional.cantidadConsultas * profesional.honorarioConsulta).toFixed(2)
+            }
+            return objProf
+        })
+        return arrayRecaudacion
+    },
+    primeros5Profesionales : function (array) {
+        primerosCinco = array.slice(0,5);
+        return primerosCinco
+    },
+    nuevoProfesional : function (array, profesional, id) {
+        array.splice(array.findIndex(item => item.identificador === id),1, profesional);
+    },
+    FALTA TERMINAR
 }
 
-console.log(metodos.cantidadTotalConsultas(datos));
 
-// console.log('H ******************************************************************************');
-// //H
-// let arrayRecaudacion = arrayProfesionales.map(profesional=>{
-//     let objProf = {
-//         nombre: profesional.nombre,
-//         especialidad: profesional.especialidad,
-//         recaudacion: profesional.cantidadConsultas * profesional.honorarioConsulta
-//     };
-//     return objProf;
-// });
-// console.log(arrayRecaudacion);
-
-// // Mesa 20 ----------------------------------------------------------------------------------
-// // A
-// let primeros5Profesionales = arrayProfesionales.slice(0,5);
-// console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-// console.log(primeros5Profesionales);
-
-// // B
-// const nuevoProfesional = {
-//     identificador: 250,
-//     estaHabilitado: true,
-//     honorarioConsulta: 8000,
-//     edad: 52,
-//     nombre: 'Linus Torvalds',
-//     especialidad: 'Junior Developer',
-//     cantidadConsultas: 48,
-//     puntuacion: 50
-// }
 
 // arrayProfesionales.splice(arrayProfesionales.findIndex(item => item.identificador === 14),1, nuevoProfesional);
 // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
@@ -82,3 +70,16 @@ console.log(metodos.cantidadTotalConsultas(datos));
 // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
 // console.log(profesionalId15);
 
+
+// B
+const nuevoProfesional = {
+    identificador: 250,
+    estaHabilitado: true,
+    honorarioConsulta: 8000,
+    edad: 52,
+    nombre: 'Linus Torvalds',
+    especialidad: 'Junior Developer',
+    cantidadConsultas: 48,
+    puntuacion: 50
+}
+console.log(metodos.nuevoProfesional(datos, nuevoProfesional, 15));

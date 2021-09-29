@@ -1,6 +1,8 @@
 const archivos = require("./lecturaEscritura");
 let arrayProfesionales = archivos.leerJson("profesionales");
 
+// Mesa 19-------------------------------------------------------------------------------------------------------
+// En esta clase usamos map, filter, reduce, forEach
 //A
 console.log('A ******************************************************************************');
 arrayProfesionales.forEach(profesional => {
