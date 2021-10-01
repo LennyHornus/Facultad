@@ -32,7 +32,7 @@ const carrera = {
 
     // E
     buscarPorPatente : function (patente) {
-        return this.autos.filter(auto => auto.patente === patente);
+        return this.autos.find(auto => auto.patente === patente);
     },
 
     // F
@@ -49,24 +49,30 @@ const carrera = {
     // H
     habilitarVehiculo : function (patente) {
         const auto = this.buscarPorPatente(patente)
-        if (auto != undefined) {
+        if (auto) {
             auto.sancionado = false;
-            this.listarAutos(this.autos);
-            TERMINALO VAGO
+            jsonHelper.escribirJson('autos', this.autos);
         }
-        const modificacion = auto.sancionado = false
+    },
 
-        return modificacion
+    // I
+    generarTanda : function (peso, cilindrada) {
+        const autos = this.filtrarPorCilindrada(cilindrada).filter(auto => auto.peso <= peso)
+        return autos.slice(0, this.autosPorTanda);
     },
-    habilitarVehiculo2: function (patente) {
-        const auto = this.buscarPorPatente(patente)
-        if(auto !== undefined ){
-            auto.sancionado = false;
-            this.listarAutos(this.autos);
-            objHelper.escribirJson("autos",this.autos)
-            return auto
-        }
+
+    // J
+    pesoPromedio : function (peso, cilindrada) {
+        const autos = this.generarTanda(peso, cilindrada);
+        const promedio = autos.reduce((acum, auto) => acum + auto.peso,0) / autos.length;
+        return `El peso promedio de los autos es : ${promedio.toFixed(0)}`;
     },
+
+    // K
+    listarPodio : function (autos) {
+        const podio = autos.sort((a, b) => b.puntaje - a.puntaje);
+        console.log(`El ganador es: ${podio[0].piloto}, con un puntaje de: ${podio[0].puntaje}\nEl segundo puesto es para: ${podio[1].piloto}, con un puntaje de: ${podio[1].puntaje}\nEl tercer puesto es para: ${podio[2].piloto}, con un puntaje de: ${podio[2].puntaje}`);
+    }
 };
 
 // C
@@ -77,7 +83,7 @@ console.log('\n'+'DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 carrera.listarAutos(carrera.autosHabilitados());
 // E
 console.log('\n'+'EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE');
-carrera.listarAutos(carrera.buscarPorPatente('MMN771'));
+console.log(carrera.buscarPorPatente('MMN771'));
 // F
 console.log('\n'+'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF');
 carrera.listarAutos(carrera.filtrarPorCilindrada(1500));
@@ -86,4 +92,13 @@ console.log('\n'+'GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
 carrera.listarAutos(carrera.ordenarPorVelocidad());
 // H
 console.log('\n'+'HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH');
-
+carrera.habilitarVehiculo('J23');
+// I
+console.log('\n'+'IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII');
+carrera.listarAutos(carrera.generarTanda(2000, 1500));
+// J 
+console.log('\n'+'JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ');
+console.log(carrera.pesoPromedio(2000,1500));
+// K
+console.log('\n'+'KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK');
+carrera.listarPodio(carrera.generarTanda(2000,1500));
