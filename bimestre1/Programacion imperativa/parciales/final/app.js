@@ -93,7 +93,7 @@ gestionDePeliculas.duracionPromedio();
 console.log(o);
 
 console.log(v, oo + " .I. Modificar Propiedad");
-gestionDePeliculas.modificarGeneroPorId(4, 'GENERO CAMBIADO');
+gestionDePeliculas.modificarGeneroPorId(1, 'GENERO CAMBIADO');
 const modificado = [gestionDePeliculas.buscarPorId(4)];
 gestionDePeliculas.listarPeliculas(modificado);
 console.log(o);
