@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="Es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ppt.css">
+    <title>Piedra Papel o Tijera</title>
+</head>
+<body>
+    <header>
+        <p> Front End 2</p>
+    </header>
+    <main>
+        <h1> Bienvenido al Piedra Papel o Tijera </h1>
+        <h2> Elegi tu opcion preferida y despues abri la consola para corroborar el resultado</h2>
+        <section>
+            <button id="piedra" class="eleccion" onclick="calcularGanador(eleccionUsuario(3),eleccionMaquina())"> Piedra </button>
+            <button id="papel" class="eleccion" onclick="calcularGanador(eleccionUsuario(2),eleccionMaquina())"> Papel </button>
+            <button id="tijera" class="eleccion" onclick="calcularGanador(eleccionUsuario(1),eleccionMaquina())"> Tijera </button>
+        </section>
+    </main>
+
+    <footer>
+        <p> Mucho mas que ver no hay, disculpa</p>
+    </footer>
+
+    <script src="ppt.js"></script>
+</body>
+</html>

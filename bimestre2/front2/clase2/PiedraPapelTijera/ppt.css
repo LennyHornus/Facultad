@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital@0;1&family=Newsreader:ital@0;1&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+
+header{
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 14px;
+    background-color: #071f2c;
+    color: #ffffff;
+    text-align: center;
+    border-style: none;
+    box-shadow: 1px 3px 15px white;
+    margin-bottom: 150px;
+}
+
+body{
+    background-color: #9e9e9e27;
+    font-family: 'Brygada 1918', cursive;
+    font-style: italic;
+    height: 100%;
+}
+
+/* Main --------------------------------------------------------------------------------------------------------------------------*/
+
+h1, h2{
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding-top: 25vh;
+    padding-bottom: 15.8vh;
+}
+
+section button{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    height: 120px;
+    width: 120px;
+    margin: 15px;
+    border-radius: 50%;
+    background-color: rgb(47, 22, 71);
+    font-size: 20px;
+}
+
+section button:hover{
+    background-color: black;
+    height: 110px;
+    width: 110px;
+    box-shadow: 10px rgb(255, 255, 255);
+    transition: all 500ms ease;
+}
+
+/* Footer ------------------------------------------------------------------------------------------------------------------------*/
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    background-color: #071f2c;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    height: 51px;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    padding: 16px;
+}
