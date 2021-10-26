@@ -40,13 +40,11 @@ function imprimeLoteria(resultado) {
 
 // Ruleta
 
-const finalRuleta = 25;
-
 function tirarRuleta(){
     const numeroUsuario = prompt("Elegi un numero del 1 al 25");
     const numeroGanador = parseInt(Math.random()*25 + 1);
     console.log( "El numero ganador es " + numeroGanador);
-    if (numeroUsuario === numeroGanador) {
+    if (numeroUsuario == numeroGanador) {
         console.log("Seleccionaste el numero ganador. Felicitaciones");
     }else{
         console.log("Mejor suerte la proxima");
