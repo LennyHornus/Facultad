@@ -1,4 +1,4 @@
-/* --------------------------- NO TOCAR DESDE ACÁ --------------------------- */
+// --------------------------- NO TOCAR DESDE ACÁ ---------------------------
 let datosPersona = {
   nombre: "",
   edad: 0,
@@ -31,10 +31,10 @@ const cambiarTema = document.querySelector('#cambiar-tema');
 profileBtn.addEventListener("click", renderizarDatosUsuario);
 materiasBtn.addEventListener("click", recorrerListadoYRenderizarTarjetas);
 cambiarTema.addEventListener("click", alternarColorTema);
-/* --------------------------- NO TOCAR HASTA ACÁ --------------------------- */
+// --------------------------- NO TOCAR HASTA ACÁ --------------------------- 
 
 function obtenerDatosDelUsuario() {
-  /* --------------- PUNTO 1: Escribe tu codigo a partir de aqui --------------- */
+  // --------------- PUNTO 1: Escribe tu codigo a partir de aqui ---------------
   datosPersona.nombre = prompt('Ingresa tu nombre');
   datosPersona.edad = 2021 - prompt('Ingresa el año en que naciste');
   datosPersona.ciudad = prompt('Ingresa la ciudad en la que vives');
@@ -42,9 +42,9 @@ function obtenerDatosDelUsuario() {
 }
 
 function renderizarDatosUsuario() {
-  /* ------------------- NO TOCAR NI ELIMINAR ESTA FUNCION. ------------------- */
+  // ------------------- NO TOCAR NI ELIMINAR ESTA FUNCION. -------------------
   obtenerDatosDelUsuario();
-  /* --------------- PUNTO 2: Escribe tu codigo a partir de aqui --------------- */
+  // --------------- PUNTO 2: Escribe tu codigo a partir de aqui ---------------
   const nombre = document.querySelector('#nombre');
   const edad = document.querySelector('#edad');
   const ciudad = document.querySelector('#ciudad');
@@ -58,7 +58,7 @@ function renderizarDatosUsuario() {
 
 
 function recorrerListadoYRenderizarTarjetas() {
-  /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
+  // ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------
   const fila = document.querySelector("#fila");
   if (fila.innerHTML.length === 0) {
     listado.forEach((materia)=>{
@@ -73,16 +73,16 @@ function recorrerListadoYRenderizarTarjetas() {
 }}
 
 function alternarColorTema() {
-  /* --------------------- PUNTO 4: Escribe tu codigo aqui --------------------- */
+// --------------------- PUNTO 4: Escribe tu codigo aqui ---------------------
  const sitio = document.querySelector('#sitio');
  sitio.classList.toggle('dark');
 }
 
-/* --------------------- PUNTO 5: Escribe tu codigo aqui --------------------- */
+// --------------------- PUNTO 5: Escribe tu codigo aqui ---------------------
 
 const textoOculto = document.querySelector('#sobre-mi')
 window.addEventListener('keyup', function (e) {
-  if (e.key == 'f') {
+  if (e.key.toLowerCase() == 'f') {
     textoOculto.classList.remove('oculto');
   }
 });
