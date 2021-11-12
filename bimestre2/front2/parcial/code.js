@@ -37,6 +37,9 @@ function obtenerDatosDelUsuario() {
   // --------------- PUNTO 1: Escribe tu codigo a partir de aqui ---------------
   datosPersona.nombre = prompt('Ingresa tu nombre');
   datosPersona.edad = 2021 - prompt('Ingresa el año en que naciste');
+  while (isNaN(datosPersona.edad)) {
+    datosPersona.edad = 2021 - prompt('Ingresa el numero del año en que naciste');
+  }
   datosPersona.ciudad = prompt('Ingresa la ciudad en la que vives');
   datosPersona.interesPorJs = confirm('¿Te interesa JavaScript?')? 'Si' : 'No';
 }
