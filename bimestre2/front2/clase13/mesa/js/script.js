@@ -47,8 +47,8 @@ formularioHogwarts.addEventListener("submit", function(event) {
         })
     }
 
-    if (inputPass.value.length < 7) { // Con el .length corroboro la longitud de la contraseña
-        errores.push({                // de ser menor a 7 caracteres, pusheo al array de errores el mensaje
+    if (inputPass.value.length < 7 && inputPass.value.length > 0) { // Con el .length corroboro que la longitud de la contraseña
+        errores.push({                                          // sea menor a 7 caracteres y mayor a 0, pusheo al array de errores el mensaje
             input: 'passShort',
             mensaje: 'La contraseña debe ser mayor a 7 caracteres'
         })
@@ -71,7 +71,7 @@ formularioHogwarts.addEventListener("submit", function(event) {
 
     // Errores de hobbies
     let totalCheckHobbies = 0;
-    for (let i = 0; i < hobbies.length; i++) {
+    for (let i = 0; i < hobbies.length; i++) { // Uso un for porque con un forEach no pude
         const check = hobbies[i].checked;
         if (check) {
             totalCheckHobbies += 1;
