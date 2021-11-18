@@ -71,12 +71,11 @@ formularioHogwarts.addEventListener("submit", function(event) {
 
     // Errores de hobbies
     let totalCheckHobbies = 0;
-    for (let i = 0; i < hobbies.length; i++) { // Uso un for porque con un forEach no pude
-        const check = hobbies[i].checked;
-        if (check) {
+    hobbies.forEach(hobbie => {
+        if (hobbie.checked) {
             totalCheckHobbies += 1;
         }
-    }
+    })
     if (totalCheckHobbies > 4) {
         errores.push({
             input: 'hobbies',
