@@ -31,4 +31,6 @@ btn.addEventListener('click', (event) => {
     espacioComentarios.innerHTML += `<p>${comentario.value}</p>` // Creo espacio en el div del html y cargo el contenido en un p
 
     localStorage.setItem('comentariosCargados', JSON.stringify(arrayComentarios)); // Cargo el array al localStorage
+
+    comentario.value = ''; // Limpio el campo para que despues de comentar quede vacio de nuevo
 });
