@@ -1,5 +1,5 @@
 // Selecciono en el DOM y guardo en variables el formulario y cada input
-let formularioSignUp = document.querySelector("form#signup")
+let formularioSignUp = document.querySelector("form#signup");
 
 let inputNombre = document.querySelector('#nombre');
 let errorNombre = document.querySelector('#errorNombre');
