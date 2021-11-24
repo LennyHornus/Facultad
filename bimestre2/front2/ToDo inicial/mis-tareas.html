@@ -15,15 +15,15 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- ----------------------------- sweet alert ----------------------------- -->
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
   <!-- CDN example (unpkg) -->
-  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <!-- <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
 
 
   <!-- logica de la página -->
-  <!-- <script src="./scripts/task.js" defer></script> --> FALTA DESCOMENTAR
+  <script src="./scripts/task.js" defer></script>
 
   <title>ToDo</title>
 </head>
@@ -46,7 +46,7 @@
   <form class="nueva-tarea">
     <div class="not-done "></div>
     <input id="nuevaTarea" type="text" placeholder="Nueva tarea">
-    <button type="submit">
+    <button type="submit" id="addToDo">
       <img src="./assets/plus.png" alt="Agregar Tarea">
     </button>
   </form>
@@ -55,25 +55,11 @@
   <ul class="tareas-pendientes">
     <div id="skeleton">
       <li class="tarea">
-        <div class="not-done"></div>
+        <!-- <div class="not-done"></div>
         <div class="descripcion">
           <p class="nombre">Nueva tarea</p>
           <p class="timestamp">Creada: 15/07/21</p>
-        </div>
-      </li>
-      <li class="tarea">
-        <div class="not-done"></div>
-        <div class="descripcion">
-          <p class="nombre">Nueva tarea</p>
-          <p class="timestamp">Creada: 15/07/21</p>
-        </div>
-      </li>
-      <li class="tarea">
-        <div class="not-done"></div>
-        <div class="descripcion">
-          <p class="nombre">Nueva tarea</p>
-          <p class="timestamp">Creada: 15/07/21</p>
-        </div>
+        </div> -->
       </li>
 
     </div>
@@ -81,7 +67,7 @@
 
   <h2 class="titulo-terminadas">Tareas terminadas</h2>
   <ul class="tareas-terminadas">
-
+    
   </ul>
 
 </body>
