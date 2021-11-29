@@ -55,7 +55,7 @@ btnAdd.addEventListener('click', (e)=>{
                                     </li>`
       );
 
-      cargarTareasPendientes();          // Cargo las tareas
+      cargarTareasPendientes();
       cargarEventos();         // Le doy funcion a los botones
       nuevaTarea.value = '';   // Limpio el valor de nueva tarea
     }
