@@ -22,12 +22,12 @@ formularioSignUp.addEventListener("submit", function(event) {
     event.preventDefault();
     let errores = [];
 
-    function cargarMensajeVacio(inputName) {
-        errores.push({
-            input: inputName,
-            mensaje: ''
-        })
-    }
+    // Limpio los errores si existian antes en el HTML
+    errorNombre.innerText = '';
+    errorApellido.innerText = '';
+    errorEmail.innerText = '';
+    errorPass.innerText = '';
+    errorPassRepe.innerText = '';
 
     // Errores del nombre
     let inputNombreValue = inputNombre.value.trim();
@@ -37,8 +37,6 @@ formularioSignUp.addEventListener("submit", function(event) {
             input: "nombre",
             mensaje: "Este campo es obligatorio"
         })
-    } else {
-        cargarMensajeVacio('nombre')
     }
 
     // Errores del apellido
@@ -49,9 +47,6 @@ formularioSignUp.addEventListener("submit", function(event) {
             input: "apellido",
             mensaje: "Este campo es obligatorio"
         })
-    }
-    else {
-        cargarMensajeVacio('apellido')
     }
 
     // Errores del email
@@ -65,12 +60,10 @@ formularioSignUp.addEventListener("submit", function(event) {
             input: "emailNoValido",
             mensaje: "Ingrese un email con formato valido"
         })
-    } else {
-        cargarMensajeVacio('emailNoValido')
     }
     
     // Errores de la password
-    if(inputPass.value === null) {
+    if(inputPass.value.length === 0) {
         errores.push({
             input: "pass",
             mensaje: "Este campo es obligatorio"
@@ -80,13 +73,11 @@ formularioSignUp.addEventListener("submit", function(event) {
             input: 'passContainsSB',
             mensaje: 'La contraseña no puede llevar espacios'
         })
-    } else if (inputPass.value.length < 7 && inputPass.value.length > 0) {      // Con el .length corroboro que la longitud de la contraseña
-        errores.push({                                                          // sea menor a 7 caracteres y mayor a 0, pusheo al array de errores el mensaje
-            input: 'passShort',
-            mensaje: 'La contraseña debe ser mayor a 7 caracteres'
+    } else if (!inputPass.value.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,16}$/)) {      // Uso una regex (expresion regular) para corroborar que la contraseña sea
+        errores.push({                                                                           // mayor a 8 caracteres, menor a 16, conteniendo 1 minuscula, 1 mayuscula y 1 numero
+            input: 'passRegex',
+            mensaje: 'La contraseña debe tener entre 8 y 16 caracteres, conteniendo 1 minuscula, 1 mayuscula y 1 numero'
         })
-    } else {
-        cargarMensajeVacio('pass')
     }
 
     // Errores del Repetir contraseña
@@ -96,10 +87,7 @@ formularioSignUp.addEventListener("submit", function(event) {
             mensaje: "Las contraseñas no coinciden"
         })
     }
-    else {
-        cargarMensajeVacio('passRepe')
-    }
-
+    console.log();
     // Aca cargo los errores en el DOM
     if(errores.length !== 0) {             // Si el array errores no es 0, es decir que contiene errores, ejecuto un forEach de cada elemento
         errores.forEach(function(error) {  // En el forEach corroboro cual error es en especifico,
@@ -122,7 +110,7 @@ formularioSignUp.addEventListener("submit", function(event) {
                 case 'passContainsSB':
                     errorPass.innerText = error.mensaje;
                     break
-                case 'passShort':
+                case 'passRegex':
                     errorPass.innerText = error.mensaje;
                     break
                 case 'passRepe':
@@ -131,6 +119,31 @@ formularioSignUp.addEventListener("submit", function(event) {
             }
         })
     } else {
-        formularioSignUp.submit(); // Si no sucede ninguno de los casos anteriores, envio el formulario
+        // Si no sucede ninguno de los casos anteriores, envio a la api la informacion correspondiente
+        const data = {
+            firstName: inputNombre.value,
+            lastName: inputApellido.value,
+            email: inputEmail.value,
+            password: inputPass.value
+        }
+        
+        const settings = {
+            "method": "POST",
+            "headers": {"content-type": "application/json"},
+            "body": JSON.stringify(data)
+        }
+        
+        fetch("https://ctd-fe2-todo.herokuapp.com/v1/users", settings)
+            .then((response)=>{
+                return response.json();
+            })
+            .then((info)=>{
+                console.log(info);
+            })
+            .catch((error)=>{
+                console.error("Error! " + error);
+            })
+
+        // formularioSignUp.submit(); // Si no sucede ninguno de los casos anteriores, envio el formulario
     }
 });

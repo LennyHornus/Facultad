@@ -1,14 +1,14 @@
 let btnAdd = document.querySelector('#addToDo');
 let nuevaTarea = document.querySelector('#nuevaTarea');
 
-let contenedor = document.querySelector('#skeleton');
+let contenedorPendientes = document.querySelector('#skeleton');
 let notasPendientesHTML = [];
 
-let ulTerminadas = document.querySelector('.tareas-terminadas');
+let contenedorTerminadas = document.querySelector('.tareas-terminadas');
 let notasTerminadasHTML = [];
 
 function cargarEventos() {
-    const deleteBtn = document.querySelectorAll('.not-done');;
+    const deleteBtn = document.querySelectorAll('.not-done');
 
     deleteBtn.forEach((btn, i) => {
         btn.addEventListener('click', ()=>{
@@ -21,16 +21,16 @@ function cargarEventos() {
 }
 
 function cargarTareasPendientes() {
-    contenedor.innerHTML = '';            // Limpio el html para cargar las notas sin que se repitan
+    contenedorPendientes.innerHTML = '';            // Limpio el html para cargar las notas sin que se repitan
     notasPendientesHTML.forEach(tarea => {
-        contenedor.innerHTML += tarea
+        contenedorPendientes.innerHTML += tarea
     });
 };
 
 function cargarTareasTerminadas() {
-    ulTerminadas.innerHTML = '';
+    contenedorTerminadas.innerHTML = '';
     notasTerminadasHTML.forEach((tareaTerminada) => {
-        ulTerminadas.innerHTML += tareaTerminada[0];
+        contenedorTerminadas.innerHTML += tareaTerminada[0];
     });
 };
 
