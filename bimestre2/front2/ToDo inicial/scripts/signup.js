@@ -137,13 +137,13 @@ formularioSignUp.addEventListener("submit", function(event) {
             .then((response)=>{
                 return response.json();
             })
-            .then((info)=>{
-                console.log(info);
+            .then(()=>{
+                location.replace('./index.js')
             })
             .catch((error)=>{
                 console.error("Error! " + error);
             })
-
-        // formularioSignUp.submit(); // Si no sucede ninguno de los casos anteriores, envio el formulario
+        
+        formularioSignUp.reset();
     }
 });

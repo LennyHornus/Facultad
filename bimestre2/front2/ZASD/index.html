@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="Es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -7,24 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- ----------------------------- estilos CSS ----------------------------- -->
   <link rel="stylesheet" href="./styles/lista-tareas.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <!-- ------------------- libreria de iconos Fontawesome -------------------- -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- ----------------------------- sweet alert ----------------------------- -->
-  <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
-  <!-- CDN example (unpkg) -->
-  <!-- <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
-
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- logica de la página -->
-  <script src="./scripts/task.js" defer></script>
-
+  <script src="./scripts/index.js"></script>
   <title>ToDo</title>
 </head>
 
@@ -37,8 +23,7 @@
     <div class="user-info">
       <p>username</p>
       <div class="user-image"></div>
-      <p id="closeApp">Cerrar sesión</i>
-      </p>
+      <p id="closeApp">Cerrar sesión</p>
     </div>
   </header>
 
@@ -46,7 +31,7 @@
   <form class="nueva-tarea">
     <div class="not-done "></div>
     <input id="nuevaTarea" type="text" placeholder="Nueva tarea">
-    <button type="submit" id="addToDo">
+    <button type="submit">
       <img src="./assets/plus.png" alt="Agregar Tarea">
     </button>
   </form>
@@ -81,6 +66,7 @@
   <h2 class="titulo-terminadas">Tareas terminadas</h2>
   <ul class="tareas-terminadas">
     
+   
   </ul>
 
 </body>

@@ -1,3 +1,7 @@
+// if (localStorage.token) {
+//     location.replace('./mis-tareas.html')    // Si ya existe en el localStorage su usuario lo redirigo a las tareas
+// }
+
 // Traigo desde el DOM los elementos que necesito
 let formularioInicio = document.querySelector('form');
 
@@ -54,26 +58,32 @@ formularioInicio.addEventListener('submit', (e)=>{
             }
         })
     } else {
-        const data = {
+        const mantenerSesion = confirm('¿Quiere mantener su sesion abierta?');
+
+        const datosUser = {
             email: inputEmail.value,
             password: inputPass.value
-        }
-        
+        };
+        //configuramos la request del Fetch
         const settings = {
-            "method": "POST",
-            "body": JSON.stringify(data)
-        }
-        
-        fetch("https://ctd-fe2-todo.herokuapp.com/v1/users/login", settings)
-            .then((response)=>{
-                return response.json();
-            })
-            .then((info)=>{
-                console.log(info);
-            })
-            .catch((error)=>{
-                console.error("Error! " + error);
-            })
-        formularioSignUp.submit(); // Si no sucede ninguno de los casos anteriores, envio el formulario
+            "method": 'POST',
+            "headers": {"content-type": "application/json"},
+            "body": JSON.stringify(datosUser)
+        };
+
+        // Mando la peticion a la api
+        console.log("Enviando POST a la API");
+        const url = 'https://ctd-fe2-todo.herokuapp.com/v1/users/login'
+        fetch(url, settings)
+            .then(response => response.json())
+            .then(token => {
+                if (mantenerSesion) {
+                    localStorage.setItem('token', JSON.stringify(token.jwt)); // Si el usuario decide mantener la sesiona abierta subo al local storage el token
+                } else {
+                    sessionStorage.setItem('token', token.jwt); // Si no decide hacerlo, guardo en sessionStorage el string del jwt, no el objeto entero
+                }
+                
+                location.replace('./mis-tareas.html')
+        })
     }
 });
