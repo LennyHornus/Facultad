@@ -71,7 +71,9 @@ function consultarTareas() {
 }
 consultarTareas();  // La hago correr una vez para traer tareas si ya existian
 
-
+// -------------------------------------------------------------- //
+// Creo la funcion para renderizar las tareas
+// -------------------------------------------------------------- //
 function renderizarTareas(listadoTareas) {
     const contenedorTerminadas = document.querySelector('.tareas-terminadas');
     contenedorTerminadas.innerHTML = '';
