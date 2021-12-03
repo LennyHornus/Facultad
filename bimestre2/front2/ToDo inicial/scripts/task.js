@@ -1,5 +1,6 @@
 if (!sessionStorage.token && !localStorage.token) {
-    location.replace('./login.html')    // Si no existe el token en el localStorage ni en el sessionStorage lo mando de nuevo a iniciar sesion
+    location.replace('./login.html')    
+    // Si no existe el token en el localStorage ni en el sessionStorage lo mando de nuevo a iniciar sesion
 }
 
 // -------------------------------------------------------------- //
@@ -30,16 +31,16 @@ fetch(urlGetMe, settingsInfoUser)
 // Agrego funcionalidad al boton de cerrar sesion 
 // -------------------------------------------------------------- //
 const btnCerrarSesion = document.querySelector('#closeApp');
-  btnCerrarSesion.addEventListener('click', () => {
+btnCerrarSesion.addEventListener('click', () => {
     let confirmacion = confirm("¿Desea cerrar sesion?")
     if (confirmacion) {
-      localStorage.clear();                 //limpiamos el localstorage y redireccioamos a login
+      //limpiamos el localstorage y el sessionStorage luego redireccioamos a login
+      localStorage.clear();
+      sessionStorage.clear();
       location.replace('./index.html');
     }
 })
 
-const btnAdd = document.querySelector('#addToDo');
-const nuevaTarea = document.querySelector('#nuevaTarea');
 const urlTareas = 'https://ctd-fe2-todo.herokuapp.com/v1/tasks';
 
 // -------------------------------------------------------------- //
@@ -82,9 +83,6 @@ function renderizarTareas(listadoTareas) {
 
     listadoTareas.forEach(tarea => {
         let fecha = new Date(tarea.createdAt); // Casteo createdAt como una Date para poder usar sus metodos
-        console.log(fecha.getHours());
-        console.log(fecha.getMinutes());
-        console.log(fecha.toTimeString());
 
         if (!tarea.completed) {
             contenedorPendientes.innerHTML += `
@@ -113,37 +111,66 @@ function renderizarTareas(listadoTareas) {
     })
 };
 
+// -------------------------------------------------------------- //
+// Creo la funcion para subir las tareas por POST a la API
+// -------------------------------------------------------------- //
+const btnAdd = document.querySelector('#addToDo');
+const nuevaTarea = document.querySelector('#nuevaTarea');
+
+function subirTarea() {
+    // mando a la api un post de la tarea 
+    const datosTareaPost = {
+        method: 'POST',
+        headers: {
+            authorization: token
+        },
+        body: {
+            description: nuevaTarea.value,
+            completed: false
+        }
+    };
+    console.log("Subiendo tarea");
+    fetch(urlTareas, datosTareaPost)
+      .then(response => response.json())
+      .then(datosTareaNueva => {
+        console.log(datosTareaNueva)
+        if (datosTareaNueva) {
+            consultarTareas();
+            // botonBorrarTarea();
+        }
+      })
+      .catch(error => console.log(error)); 
+}
+
+btnAdd.addEventListener('click', (e) => {
+    e.preventDefault();
+    subirTarea();
+})
+
+
+// -------------------------------------------------------------- //
+// Creo la funcion para terminar las tareas pendientes, con un UPDATE a la API
+// -------------------------------------------------------------- //
+
+// function botonTerminarTarea() {
+//     aca le doy funcion al boton de terminar tarea, mando un UPDATE del estado
+//     de la tarea a la api
+// }
+
+// -------------------------------------------------------------- //
+// Creo la funcion para borrar tareas con un DELETE a la API
+// -------------------------------------------------------------- //
 
 // function borrarTarea() { 
-//     Aca voy a tener que hacer un update en la api para que convierta el valor de completed a true
-    
-//     si completed es true mando un delete a la api para eliminar la tarea
-// }
-
-// function subirTarea(texto, completed) {
-//     mando a la api un post de la tarea 
+//     Aca mando un DELETE a la api, borrando por id la tarea, y cargandolas de nuevo
 // }
 
 
-// function cargarFuncionBorrar() {
+// function cargarFuncionTerminar() {
 //     const deleteBtn = document.querySelectorAll('.not-done');
-
 //     deleteBtn.forEach((btn) => {
 //         btn.addEventListener('click', ()=>{
-//             borrarTarea();
-//             cargarTareasPendientes();
-//             cargarTareasTerminadas();
+//             terminarTarea();
 //         })
 //     })
 // }
-
-// btnAdd.addEventListener('click', (e)=>{
-//     e.preventDefault(); // Pauso el submit de la nota
-
-//     if (nuevaTarea.value.trim()) {                  // Si el valor de nueva tarea es truthy sigo
-//         subirTarea(nuevaTarea.value, false);
-//         cargarTareasPendientes();
-//         cargarFuncionBorrar();
-//         nuevaTarea.value = '';   // Limpio el valor de nueva tarea
-//     }
-// })
