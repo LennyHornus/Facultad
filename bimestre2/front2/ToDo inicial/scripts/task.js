@@ -58,18 +58,59 @@ function consultarTareas() {
       .then(tareas => {
         console.log(tareas)
 
-        // Selecciono el esqueleto con las tareas raras y las borro
+        // Selecciono el esqueleto con las tareas predeterminadas y las borro
         const skeleton = document.querySelector('#skeleton');   
         if (skeleton) {
           skeleton.remove();
         }
 
-        // renderizarTareas(tareas);
+        renderizarTareas(tareas);
         // botonBorrarTarea();
       })
       .catch(error => console.log(error));
 }
 consultarTareas();  // La hago correr una vez para traer tareas si ya existian
+
+
+function renderizarTareas(listadoTareas) {
+    const contenedorTerminadas = document.querySelector('.tareas-terminadas');
+    contenedorTerminadas.innerHTML = '';
+    const contenedorPendientes = document.querySelector('.tareas-pendientes');
+    contenedorPendientes.innerHTML = '';
+
+    listadoTareas.forEach(tarea => {
+        let fecha = new Date(tarea.createdAt); // Casteo createdAt como una Date para poder usar sus metodos
+        console.log(fecha.getHours());
+        console.log(fecha.getMinutes());
+        console.log(fecha.toTimeString());
+
+        if (!tarea.completed) {
+            contenedorPendientes.innerHTML += `
+                        <li class="tarea">
+                            <div class="not-done change" id="${tarea.id}"></div>
+                            <div class="descripcion">
+                                <p class="nombre">${tarea.description}</p>
+                                <p class="timestamp"><i class="far fa-calendar-alt"></i> ${fecha.toLocaleDateString()} <i class="far fa-clock"></i> ${fecha.getHours()}:${fecha.getMinutes()}</p>
+                            </div>
+                        </li>`
+        }
+        else {
+            contenedorTerminadas.innerHTML += `
+                        <li class="tarea">
+                            <div class="done"></div>
+                            <div class="descripcion">
+                            <div>
+                                <button><i id="${tarea.id}" class="fas fa-undo-alt change"></i></button>
+                                <button><i id="${tarea.id}" class="far fa-trash-alt"></i></button>
+                            </div>
+                            <p class="nombre">${tarea.description}</p>
+                            <p class="timestamp"><i class="far fa-calendar-alt"></i> ${fecha.toLocaleDateString()} <i class="far fa-clock"></i> ${fecha.getHours()}:${fecha.getMinutes()}</p>
+                            </div>
+                        </li>`
+        }
+    })
+};
+
 
 // function borrarTarea() { 
 //     Aca voy a tener que hacer un update en la api para que convierta el valor de completed a true
@@ -81,40 +122,6 @@ consultarTareas();  // La hago correr una vez para traer tareas si ya existian
 //     mando a la api un post de la tarea 
 // }
 
-// function cargarTareas(listadoTareas) {
-//     let contenedorTerminadas = document.querySelector('.tareas-terminadas');
-//     contenedorTerminadas.innerHTML = '';
-//     let contenedorPendientes = document.querySelector('.tareas-pendientes');
-//     contenedorPendientes.innerHTML = '';
-    
-//     listadoTareas.forEach(tarea => {
-//         if (!tarea.completed) {
-//             contenedorPendientes.innerHTML += `
-//                         <li class="tarea">
-//                             <div class="not-done change" id="${tarea.id}"></div>
-//                             <div class="descripcion">
-//                                 <p class="nombre">${tarea.description}</p>
-//                                 <p class="timestamp"><i class="far fa-calendar-alt"></i>${fecha.toLocaleDateString()} <i class="far fa-clock"></i>${fecha.getHours()}:${fecha.getMinutes()}</p>
-//                             </div>
-//                         </li>`
-//         }
-//         else {
-//             contenedorTerminadas.innerHTML += `
-//                         <li class="tarea">
-//                             <div class="done"></div>
-//                             <div class="descripcion">
-//                             <div>
-//                                 <button><i id="${tarea.id}" class="fas fa-undo-alt change"></i></button>
-//                                 <button><i id="${tarea.id}" class="far fa-trash-alt"></i></button>
-//                             </div>
-//                             <p class="nombre">${tarea.description}</p>
-//                             <p class="timestamp"><i class="far fa-calendar-alt"></i>${fecha.toLocaleDateString()} <i class="far fa-clock"></i>${fecha.getHours()}:${fecha.getMinutes()}</p>
-//                             </div>
-//                         </li>`
-//         }
-//     })
-    
-// };
 
 // function cargarFuncionBorrar() {
 //     const deleteBtn = document.querySelectorAll('.not-done');
