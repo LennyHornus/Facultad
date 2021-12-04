@@ -64,8 +64,7 @@ function consultarTareas() {
       .then(response => response.json())
       .then(tareas => {
         renderizarTareas(tareas);
-        const arrayBotones = document.querySelectorAll('.not-done');
-        terminarTarea(arrayBotones, tareas);
+        terminarTarea(tareas);
         // botonBorrarTarea();
       })
       .catch(error => console.log(error));
@@ -166,8 +165,9 @@ btnAdd.addEventListener('click', (e) => {
 // Creo la funcion para terminar las tareas pendientes, con un PUT a la API
 // -------------------------------------------------------------- //
 
-function terminarTarea(arrayBotones, arrayTareas) { 
-  arrayBotones.forEach((boton, i) => {
+function terminarTarea(arrayTareas) { 
+  const arrayBotonesTerminar = document.querySelectorAll('.not-done');
+  arrayBotonesTerminar.forEach((boton, i) => {
     boton.addEventListener('click', (e)=> {
       e.preventDefault();
       
@@ -183,6 +183,8 @@ function terminarTarea(arrayBotones, arrayTareas) {
       };
 
       console.log("Terminando tarea");
+      console.log(arrayTareas[i].id);     // Falta arreglar como selecciono cada boton porque no me esta tomando bien el id
+      console.log(datosTareaPut);
 
       fetch(`${urlTareas}/${arrayTareas[i].id}`, datosTareaPut)
         .then(response => response.json())
@@ -196,13 +198,40 @@ function terminarTarea(arrayBotones, arrayTareas) {
   })
 }
 
+
 // -------------------------------------------------------------- //
 // Creo la funcion para borrar tareas con un DELETE a la API
 // -------------------------------------------------------------- //
 
-// function borrarTarea() { 
-//     Aca mando un DELETE a la api, borrando por id la tarea, y cargandolas de nuevo
-// }
+function borrarTarea(arrayTareas) { 
+  const arrayBotonesBorrar = document.querySelectorAll('.far fa-trash-alt'); // Fijate que seleccionar bien
+  arrayBotonesBorrar.forEach((boton, i) => {
+    boton.addEventListener('click', (e)=> {
+      e.preventDefault();
+      
+      const datosTareaDelete = {
+        "method": "DELETE",
+        "headers": {
+          "authorization": token,
+          "Content-type": "application/json; charset=UTF-8"
+        },
+      };
+
+      console.log("Borrando tarea");
+      console.log(arrayTareas[i].id); // Falta arreglar como selecciono cada boton porque no me esta tomando bien el id
+
+      fetch(`${urlTareas}/${arrayTareas[i].id}`, datosTareaDelete)
+        .then(response => response.json())
+        .then(datosPut => {
+          console.log(datosPut);
+          if (datosPut) {
+            consultarTareas();
+          }
+        })
+        .catch(error => console.log(error)); 
+    })
+  })
+}
 
 
 // function cargarFuncionTerminar() {

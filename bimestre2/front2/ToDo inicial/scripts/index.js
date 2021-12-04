@@ -1,6 +1,6 @@
-// if (localStorage.token) {
-//     location.replace('./mis-tareas.html')    // Si ya existe en el localStorage su usuario lo redirigo a las tareas
-// }
+if (localStorage.token) {
+    location.replace('./mis-tareas.html')    // Si ya existe en el localStorage su usuario lo redirigo a las tareas
+}
 
 // Traigo desde el DOM los elementos que necesito
 let formularioInicio = document.querySelector('form');
