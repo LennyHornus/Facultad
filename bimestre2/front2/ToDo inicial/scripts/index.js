@@ -58,7 +58,9 @@ formularioInicio.addEventListener('submit', (e)=>{
             }
         })
     } else {
-        const mantenerSesion = confirm('¿Quiere mantener su sesion abierta?');
+        // Traigo el boton de mantener sesion
+        const mantenerSesion = document.querySelector('#mantenerSesion');
+
 
         const datosUser = {
             email: inputEmail.value,
@@ -77,7 +79,7 @@ formularioInicio.addEventListener('submit', (e)=>{
         fetch(url, settings)
             .then(response => response.json())
             .then(token => {
-                if (mantenerSesion) {
+                if (mantenerSesion.checked) {
                     localStorage.setItem('token', JSON.stringify(token.jwt)); // Si el usuario decide mantener la sesiona abierta subo al local storage el token
                 } else {
                     sessionStorage.setItem('token', token.jwt); // Si no decide hacerlo, guardo en sessionStorage el string del jwt, no el objeto entero
