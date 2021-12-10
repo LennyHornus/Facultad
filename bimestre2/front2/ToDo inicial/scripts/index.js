@@ -80,6 +80,8 @@ formularioInicio.addEventListener('submit', (e)=>{
                 if (response.status === 201) {
                     return response.json()
                 } else {
+                    errorEmail.innerText = '';
+                    errorPass.innerText = '';
                     errorPass.innerText = 'Invalid email or password'
                 }})
             .then(token => {
