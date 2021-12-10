@@ -138,7 +138,7 @@ formularioSignUp.addEventListener("submit", function(event) {
                 return response.json();
             })
             .then(()=>{
-                location.replace('./index.js')
+                location.replace('./index.html')
             })
             .catch((error)=>{
                 console.error("Error! " + error);
