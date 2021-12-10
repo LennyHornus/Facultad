@@ -35,7 +35,7 @@ formularioSignUp.addEventListener("submit", function(event) {
     if(inputNombreValue === "") {
         errores.push({
             input: "nombre",
-            mensaje: "Este campo es obligatorio"
+            mensaje: "This field is required"
         })
     }
 
@@ -45,7 +45,7 @@ formularioSignUp.addEventListener("submit", function(event) {
     if(inputApellidoValue === "") {
         errores.push({
             input: "apellido",
-            mensaje: "Este campo es obligatorio"
+            mensaje: "This field is required"
         })
     }
 
@@ -53,12 +53,12 @@ formularioSignUp.addEventListener("submit", function(event) {
     if(inputEmail.value.trim() === "") {
         errores.push({
             input: "emailVacio",
-            mensaje: "Este campo es obligatorio"
+            mensaje: "This field is required"
         })
     }else if (!inputEmail.value.match(/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$/)) {
         errores.push({
             input: "emailNoValido",
-            mensaje: "Ingrese un email con formato valido"
+            mensaje: "Enter an email with valid format"
         })
     }
     
@@ -66,17 +66,17 @@ formularioSignUp.addEventListener("submit", function(event) {
     if(inputPass.value.length === 0) {
         errores.push({
             input: "pass",
-            mensaje: "Este campo es obligatorio"
+            mensaje: "This field is required"
         })
     } else if (inputPass.value.includes(' ')) {         // Con el includes(' '), corroboro que la contraseña no contenga espacios
         errores.push({                                  // Si los contiene, pusheo al array de errores un mensaje que indique que la contraseña no debe llevar espacios
             input: 'passContainsSB',
-            mensaje: 'La contraseña no puede llevar espacios'
+            mensaje: `Password can't containt spaces`
         })
     } else if (!inputPass.value.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,16}$/)) {      // Uso una regex (expresion regular) para corroborar que la contraseña sea
         errores.push({                                                                           // mayor a 8 caracteres, menor a 16, conteniendo 1 minuscula, 1 mayuscula y 1 numero
             input: 'passRegex',
-            mensaje: 'La contraseña debe tener entre 8 y 16 caracteres, conteniendo 1 minuscula, 1 mayuscula y 1 numero'
+            mensaje: 'The password must be between 8 and 16 characters, containing 1 lowercase, 1 uppercase and 1 number'
         })
     }
 
@@ -84,7 +84,7 @@ formularioSignUp.addEventListener("submit", function(event) {
     if(!(inputPassRepe.value == inputPass.value)) {
         errores.push({
             input: "passRepe",
-            mensaje: "Las contraseñas no coinciden"
+            mensaje: "Passwords do not match"
         })
     }
     console.log();

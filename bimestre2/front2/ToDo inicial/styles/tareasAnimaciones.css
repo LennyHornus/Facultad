@@ -1,0 +1,7 @@
+.nueva-tarea:hover{
+    box-shadow: 2px 2px 10px red;
+}
+
+.tarea .descripcion:hover {
+    box-shadow: 2px 2px 10px red;
+}

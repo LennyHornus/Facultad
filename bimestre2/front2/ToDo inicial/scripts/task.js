@@ -36,7 +36,7 @@ fetch(urlGetMe, settingsInfoUser)
 
 const btnCerrarSesion = document.querySelector('#closeApp');
 btnCerrarSesion.addEventListener('click', () => {
-  let confirmacion = confirm("¿Desea cerrar sesion?")
+  let confirmacion = confirm("Do you want to log out?")
   if (confirmacion) {
     //limpiamos el localstorage y el sessionStorage luego redireccioamos a login
     localStorage.clear();

@@ -8,6 +8,7 @@
   <!-- ----------------------------- estilos CSS ----------------------------- -->
   <link rel="stylesheet" href="./styles/lista-tareas.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/tareasAnimaciones.css">
 
   <!-- ------------------- libreria de iconos Fontawesome -------------------- -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -37,7 +38,7 @@
     <div class="user-info">
       <p>username</p>
       <div class="user-image"></div>
-      <p id="closeApp">Cerrar sesión</i>
+      <p id="closeApp">Sign off</i>
       </p>
     </div>
   </header>
@@ -45,7 +46,7 @@
 
   <form class="nueva-tarea">
     <div class="not-done "></div>
-    <input id="nuevaTarea" type="text" placeholder="Nueva tarea">
+    <input id="nuevaTarea" type="text" placeholder="New task">
     <button type="submit" id="addToDo">
       <img src="./assets/plus.png" alt="Agregar Tarea">
     </button>
@@ -78,7 +79,7 @@
     </div>
   </ul>
 
-  <h2 class="titulo-terminadas">Tareas terminadas</h2>
+  <h2 class="titulo-terminadas">Completed Tasks</h2>
   <ul class="tareas-terminadas">
     <li class="tarea">
       <div class="done"></div>

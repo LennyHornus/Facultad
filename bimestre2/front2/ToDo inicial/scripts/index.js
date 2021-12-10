@@ -24,14 +24,12 @@ formularioInicio.addEventListener('submit', (e)=>{
     if(inputEmail.value.length === 0) {
         errores.push({
             input: "emailVacio",
-            mensaje: "Ingrese un email"
+            mensaje: "Enter an email"
         })
-    };
-
-    if(!inputEmail.value.match(/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$/)) {
+    } else if(!inputEmail.value.match(/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$/)) {
         errores.push({
             input: "emailNoValido",
-            mensaje: "Ingrese un email con formato valido"
+            mensaje: "Enter an email with valid format"
         })
     }
     
@@ -39,7 +37,7 @@ formularioInicio.addEventListener('submit', (e)=>{
     if(!inputPass.value) {
         errores.push({
             input: "pass",
-            mensaje: "Ingrese una contraseña"
+            mensaje: "Enter a password"
         })
     }
 
@@ -77,7 +75,13 @@ formularioInicio.addEventListener('submit', (e)=>{
         console.log("Enviando POST a la API");
         const url = 'https://ctd-fe2-todo.herokuapp.com/v1/users/login'
         fetch(url, settings)
-            .then(response => response.json())
+            .then(response =>{
+                console.log(response.status);
+                if (response.status === 201) {
+                    return response.json()
+                } else {
+                    errorPass.innerText = 'Invalid email or password'
+                }})
             .then(token => {
                 if (mantenerSesion.checked) {
                     localStorage.setItem('token', JSON.stringify(token.jwt)); // Si el usuario decide mantener la sesiona abierta subo al local storage el token
