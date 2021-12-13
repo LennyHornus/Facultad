@@ -46,6 +46,14 @@ a {
   cursor: pointer;
   min-width: 50px;
   text-align: center;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+#closeApp:hover{
+  background: white;
+  color: black;
+  box-shadow: 0 0 10px white;
 }
 
 /* Nueva tarea ----------------------------------------------------------- */
