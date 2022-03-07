@@ -135,10 +135,10 @@ formularioSignUp.addEventListener("submit", function(event) {
         
         fetch("https://ctd-fe2-todo.herokuapp.com/v1/users", settings)
             .then((response)=>{
-                return response.json();
-            })
-            .then(()=>{
-                location.replace('./index.html')
+                if (response.status == 201) {
+                    alert('Account created successfully')
+                    location.replace('./index.html')
+                }
             })
             .catch((error)=>{
                 console.error("Error! " + error);
